@@ -111,7 +111,7 @@ begin
         end if;
     end process;
 
-    process(CLK, RST)
+    process(CLK, RST) -- Proceso que modela el Prescaler
     -- Declaracion de variables
     variable cuenta : integer := 0;
     begin
