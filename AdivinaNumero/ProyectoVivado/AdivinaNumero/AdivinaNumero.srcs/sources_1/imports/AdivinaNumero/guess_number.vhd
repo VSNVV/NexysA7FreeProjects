@@ -31,7 +31,7 @@ signal Dec4To7Seg : std_logic_vector(6 downto 0);
 begin
     process(CLK, NUMBER_TO_GUESS, NUMBER_TO_GUESS_OK) -- Registro sincrono que envia el numero a adivinar a un comparador (combinacional)
     -- Declaracion de variables
-    variable num := std_logic_vector(7 downto 0) := (others => '0');
+    variable num : std_logic_vector(7 downto 0) := (others => '0');
     begin
         if RST = '1' then
             num := (others => '0');
@@ -45,7 +45,7 @@ begin
 
     process(CLK, GUESSER_NUMBER, GUESSER_NUMBER_OK) -- Registro sincrono que envia el intento a un comparador (combinacional)
     -- Declaracion de variables
-    variable guessing := std_logic_vector(7 downto 0) := (others => '0');
+    variable guessing : std_logic_vector(7 downto 0) := (others => '0');
     begin
         if RST = '1' then
             guessing := (others => '0');
@@ -62,10 +62,10 @@ begin
     variable cmp_aux : std_logic_vector(7 downto 0) := (others => '0');
     begin
         for index in reg_number_out'range loop
-            if reg_number_out(i) = reg_guess_out(i) then
-                cmp_aux(i) = '1';
+            if reg_number_out(index) = reg_guess_out(index) then
+                cmp_aux(index) := '1';
             else
-                cmp_aux(i) = '0';
+                cmp_aux(index) := '0';
             end if;
         end loop;
         comparator_out <= cmp_aux;
@@ -80,7 +80,7 @@ begin
         end if;
     end process;
 
-    process(GUESS_NUMBER_OK, CLK, RST) -- Proceso que cuenta el numero de intentos y lo envía a un Multiplexor
+    process(GUESSER_NUMBER_OK, CLK, RST) -- Proceso que cuenta el numero de intentos y lo envía a un Multiplexor
     -- Declaracion de variables
     variable numTry0 : unsigned(3 downto 0) := (others => '0');
     variable numTry1 : unsigned(3 downto 0) := (others => '0');
@@ -101,7 +101,7 @@ begin
             numTry6 := (others => '0');
             numTry7 := (others => '0');
         elsif CLK'event and CLK = '1' then
-            if GUESS_NUMBER_OK = '1' then
+            if GUESSER_NUMBER_OK = '1' then
                 if(numTry0 < 9) then
                     numTry0 := numTry0 + 1;
                 elsif(numTry1 < 9) then
@@ -215,7 +215,7 @@ begin
     process(Dec3To8Out, CLK, RST) -- Proceso que modela el Registro de AND_70
     begin
         if RST = '1' then
-            AND_70 <= "11111111"
+            AND_70 <= "11111111";
         elsif CLK'event and CLK = '1' then
             AND_70 <= Dec3To8Out;
         end if;
