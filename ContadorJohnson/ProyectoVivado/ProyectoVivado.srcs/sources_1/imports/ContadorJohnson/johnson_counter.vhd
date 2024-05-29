@@ -36,7 +36,7 @@ begin
 
     JohnsonCounter: process(CLK, RST, PROut, DIRECTION, POL)
     -- Declaracion de variables
-    variable result : std_logic_vector(15 downto 0);
+    variable result : std_logic_vector(15 downto 0) := "0000000000000001";
     begin
         if RST = '1' then
             result := (others => not POL);
@@ -47,6 +47,7 @@ begin
             end if;
         elsif CLK'event and CLK = '1' then
             if PROut = '1' then
+                pol_reg <= POL;
                 if DIRECTION = '1' then
                     result := result(14 downto 0) & result(15);
                 else
@@ -57,7 +58,6 @@ begin
                 end if;
             end if;
         end if;
-        pol_reg <= POL;
         COUNTER_OUT <= result;
     end process JohnsonCounter;
 end rtl;

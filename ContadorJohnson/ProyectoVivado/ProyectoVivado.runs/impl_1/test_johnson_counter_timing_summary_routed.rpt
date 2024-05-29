@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon May 27 16:57:44 2024
+| Date         : Wed May 29 01:02:03 2024
 | Host         : victorsanavia running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file test_johnson_counter_timing_summary_routed.rpt -rpx test_johnson_counter_timing_summary_routed.rpx -warn_on_violation
 | Design       : test_johnson_counter
@@ -130,7 +130,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      5.509        0.000                      0                   95        0.131        0.000                      0                   95        4.500        0.000                       0                    66  
+      5.543        0.000                      0                   96        0.152        0.000                      0                   96        4.500        0.000                       0                    67  
 
 
 All user specified timing constraints are met.
@@ -153,7 +153,7 @@ sys_clk_pin  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         5.509        0.000                      0                   95        0.131        0.000                      0                   95        4.500        0.000                       0                    66  
+sys_clk_pin         5.543        0.000                      0                   96        0.152        0.000                      0                   96        4.500        0.000                       0                    67  
 
 
 ------------------------------------------------------------------------------------------------
@@ -184,438 +184,15 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        5.509ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.131ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        5.543ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.152ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             5.509ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[0]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.346ns  (logic 0.890ns (20.479%)  route 3.456ns (79.521%))
-  Logic Levels:           3  (LUT4=2 LUT5=1)
-  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.329ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.726     5.329    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y97          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y97          FDCE (Prop_fdce_C_Q)         0.518     5.847 r  U_JOHNSON_COUNTER/count_reg_reg[6]/Q
-                         net (fo=2, routed)           0.870     6.717    U_JOHNSON_COUNTER/count_reg[6]
-    SLICE_X2Y97          LUT4 (Prop_lut4_I1_O)        0.124     6.841 r  U_JOHNSON_COUNTER/count_reg[31]_i_6/O
-                         net (fo=1, routed)           0.427     7.268    U_JOHNSON_COUNTER/count_reg[31]_i_6_n_0
-    SLICE_X2Y96          LUT5 (Prop_lut5_I4_O)        0.124     7.392 r  U_JOHNSON_COUNTER/count_reg[31]_i_3/O
-                         net (fo=33, routed)          2.159     9.551    U_JOHNSON_COUNTER/count_reg[31]_i_3_n_0
-    SLICE_X4Y100         LUT4 (Prop_lut4_I1_O)        0.124     9.675 r  U_JOHNSON_COUNTER/count_reg[0]_i_1/O
-                         net (fo=1, routed)           0.000     9.675    U_JOHNSON_COUNTER/count_reg_0[0]
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.588    15.010    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
-                         clock pessimism              0.180    15.190    
-                         clock uncertainty           -0.035    15.155    
-    SLICE_X4Y100         FDCE (Setup_fdce_C_D)        0.029    15.184    U_JOHNSON_COUNTER/count_reg_reg[0]
-  -------------------------------------------------------------------
-                         required time                         15.184    
-                         arrival time                          -9.675    
-  -------------------------------------------------------------------
-                         slack                                  5.509    
-
-Slack (MET) :             5.527ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[18]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.374ns  (logic 0.918ns (20.988%)  route 3.456ns (79.012%))
-  Logic Levels:           3  (LUT4=1 LUT5=2)
-  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.329ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.726     5.329    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y97          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y97          FDCE (Prop_fdce_C_Q)         0.518     5.847 r  U_JOHNSON_COUNTER/count_reg_reg[6]/Q
-                         net (fo=2, routed)           0.870     6.717    U_JOHNSON_COUNTER/count_reg[6]
-    SLICE_X2Y97          LUT4 (Prop_lut4_I1_O)        0.124     6.841 r  U_JOHNSON_COUNTER/count_reg[31]_i_6/O
-                         net (fo=1, routed)           0.427     7.268    U_JOHNSON_COUNTER/count_reg[31]_i_6_n_0
-    SLICE_X2Y96          LUT5 (Prop_lut5_I4_O)        0.124     7.392 r  U_JOHNSON_COUNTER/count_reg[31]_i_3/O
-                         net (fo=33, routed)          2.159     9.551    U_JOHNSON_COUNTER/count_reg[31]_i_3_n_0
-    SLICE_X4Y100         LUT5 (Prop_lut5_I2_O)        0.152     9.703 r  U_JOHNSON_COUNTER/count_reg[18]_i_1/O
-                         net (fo=1, routed)           0.000     9.703    U_JOHNSON_COUNTER/count_reg_0[18]
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[18]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.588    15.010    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[18]/C
-                         clock pessimism              0.180    15.190    
-                         clock uncertainty           -0.035    15.155    
-    SLICE_X4Y100         FDCE (Setup_fdce_C_D)        0.075    15.230    U_JOHNSON_COUNTER/count_reg_reg[18]
-  -------------------------------------------------------------------
-                         required time                         15.230    
-                         arrival time                          -9.703    
-  -------------------------------------------------------------------
-                         slack                                  5.527    
-
-Slack (MET) :             5.621ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[6]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[26]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.234ns  (logic 0.890ns (21.021%)  route 3.344ns (78.979%))
-  Logic Levels:           3  (LUT4=1 LUT5=2)
-  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.329ns
-    Clock Pessimism Removal (CPR):    0.180ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.726     5.329    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y97          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y97          FDCE (Prop_fdce_C_Q)         0.518     5.847 r  U_JOHNSON_COUNTER/count_reg_reg[6]/Q
-                         net (fo=2, routed)           0.870     6.717    U_JOHNSON_COUNTER/count_reg[6]
-    SLICE_X2Y97          LUT4 (Prop_lut4_I1_O)        0.124     6.841 r  U_JOHNSON_COUNTER/count_reg[31]_i_6/O
-                         net (fo=1, routed)           0.427     7.268    U_JOHNSON_COUNTER/count_reg[31]_i_6_n_0
-    SLICE_X2Y96          LUT5 (Prop_lut5_I4_O)        0.124     7.392 r  U_JOHNSON_COUNTER/count_reg[31]_i_3/O
-                         net (fo=33, routed)          2.047     9.439    U_JOHNSON_COUNTER/count_reg[31]_i_3_n_0
-    SLICE_X4Y102         LUT5 (Prop_lut5_I2_O)        0.124     9.563 r  U_JOHNSON_COUNTER/count_reg[26]_i_1/O
-                         net (fo=1, routed)           0.000     9.563    U_JOHNSON_COUNTER/count_reg_0[26]
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[26]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.588    15.010    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[26]/C
-                         clock pessimism              0.180    15.190    
-                         clock uncertainty           -0.035    15.155    
-    SLICE_X4Y102         FDCE (Setup_fdce_C_D)        0.029    15.184    U_JOHNSON_COUNTER/count_reg_reg[26]
-  -------------------------------------------------------------------
-                         required time                         15.184    
-                         arrival time                          -9.563    
-  -------------------------------------------------------------------
-                         slack                                  5.621    
-
-Slack (MET) :             5.637ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[30]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.367ns  (logic 2.357ns (53.969%)  route 2.010ns (46.031%))
-  Logic Levels:           9  (CARRY4=8 LUT5=1)
-  Clock Path Skew:        -0.041ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.011ns = ( 15.011 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.311ns
-    Clock Pessimism Removal (CPR):    0.259ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.709     5.311    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.456     5.767 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          1.211     6.978    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X3Y96          CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.580     7.558 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
-                         net (fo=1, routed)           0.000     7.558    U_JOHNSON_COUNTER/count_reg0_carry_n_0
-    SLICE_X3Y97          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.672 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
-                         net (fo=1, routed)           0.000     7.672    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
-    SLICE_X3Y98          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.786 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.786    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
-    SLICE_X3Y99          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.900 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
-                         net (fo=1, routed)           0.001     7.901    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
-    SLICE_X3Y100         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.015 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     8.015    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
-    SLICE_X3Y101         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.129 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     8.129    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
-    SLICE_X3Y102         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.243 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     8.243    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
-    SLICE_X3Y103         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     8.577 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[1]
-                         net (fo=1, routed)           0.799     9.376    U_JOHNSON_COUNTER/data0[30]
-    SLICE_X2Y103         LUT5 (Prop_lut5_I4_O)        0.303     9.679 r  U_JOHNSON_COUNTER/count_reg[30]_i_1/O
-                         net (fo=1, routed)           0.000     9.679    U_JOHNSON_COUNTER/count_reg_0[30]
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[30]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.589    15.011    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[30]/C
-                         clock pessimism              0.259    15.270    
-                         clock uncertainty           -0.035    15.235    
-    SLICE_X2Y103         FDCE (Setup_fdce_C_D)        0.081    15.316    U_JOHNSON_COUNTER/count_reg_reg[30]
-  -------------------------------------------------------------------
-                         required time                         15.316    
-                         arrival time                          -9.679    
-  -------------------------------------------------------------------
-                         slack                                  5.637    
-
-Slack (MET) :             5.667ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[27]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.304ns  (logic 2.147ns (49.886%)  route 2.157ns (50.114%))
-  Logic Levels:           8  (CARRY4=7 LUT5=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.311ns
-    Clock Pessimism Removal (CPR):    0.276ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.709     5.311    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.456     5.767 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          1.211     6.978    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X3Y96          CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.580     7.558 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
-                         net (fo=1, routed)           0.000     7.558    U_JOHNSON_COUNTER/count_reg0_carry_n_0
-    SLICE_X3Y97          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.672 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
-                         net (fo=1, routed)           0.000     7.672    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
-    SLICE_X3Y98          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.786 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.786    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
-    SLICE_X3Y99          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.900 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
-                         net (fo=1, routed)           0.001     7.901    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
-    SLICE_X3Y100         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.015 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     8.015    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
-    SLICE_X3Y101         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.129 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     8.129    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
-    SLICE_X3Y102         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     8.368 r  U_JOHNSON_COUNTER/count_reg0_carry__5/O[2]
-                         net (fo=1, routed)           0.945     9.313    U_JOHNSON_COUNTER/data0[27]
-    SLICE_X4Y102         LUT5 (Prop_lut5_I4_O)        0.302     9.615 r  U_JOHNSON_COUNTER/count_reg[27]_i_1/O
-                         net (fo=1, routed)           0.000     9.615    U_JOHNSON_COUNTER/count_reg_0[27]
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[27]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.588    15.010    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[27]/C
-                         clock pessimism              0.276    15.286    
-                         clock uncertainty           -0.035    15.251    
-    SLICE_X4Y102         FDCE (Setup_fdce_C_D)        0.031    15.282    U_JOHNSON_COUNTER/count_reg_reg[27]
-  -------------------------------------------------------------------
-                         required time                         15.282    
-                         arrival time                          -9.615    
-  -------------------------------------------------------------------
-                         slack                                  5.667    
-
-Slack (MET) :             5.676ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[29]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.325ns  (logic 2.241ns (51.814%)  route 2.084ns (48.186%))
-  Logic Levels:           9  (CARRY4=8 LUT5=1)
-  Clock Path Skew:        -0.041ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.011ns = ( 15.011 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.311ns
-    Clock Pessimism Removal (CPR):    0.259ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.709     5.311    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.456     5.767 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          1.211     6.978    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X3Y96          CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.580     7.558 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
-                         net (fo=1, routed)           0.000     7.558    U_JOHNSON_COUNTER/count_reg0_carry_n_0
-    SLICE_X3Y97          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.672 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
-                         net (fo=1, routed)           0.000     7.672    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
-    SLICE_X3Y98          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.786 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.786    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
-    SLICE_X3Y99          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.900 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
-                         net (fo=1, routed)           0.001     7.901    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
-    SLICE_X3Y100         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.015 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     8.015    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
-    SLICE_X3Y101         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.129 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     8.129    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
-    SLICE_X3Y102         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.243 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     8.243    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
-    SLICE_X3Y103         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.222     8.465 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[0]
-                         net (fo=1, routed)           0.873     9.337    U_JOHNSON_COUNTER/data0[29]
-    SLICE_X2Y103         LUT5 (Prop_lut5_I4_O)        0.299     9.636 r  U_JOHNSON_COUNTER/count_reg[29]_i_1/O
-                         net (fo=1, routed)           0.000     9.636    U_JOHNSON_COUNTER/count_reg_0[29]
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[29]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.589    15.011    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[29]/C
-                         clock pessimism              0.259    15.270    
-                         clock uncertainty           -0.035    15.235    
-    SLICE_X2Y103         FDCE (Setup_fdce_C_D)        0.077    15.312    U_JOHNSON_COUNTER/count_reg_reg[29]
-  -------------------------------------------------------------------
-                         required time                         15.312    
-                         arrival time                          -9.636    
-  -------------------------------------------------------------------
-                         slack                                  5.676    
-
-Slack (MET) :             5.683ns  (required time - arrival time)
+Slack (MET) :             5.543ns  (required time - arrival time)
   Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            U_JOHNSON_COUNTER/count_reg_reg[31]/D
@@ -623,92 +200,11 @@ Slack (MET) :             5.683ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.320ns  (logic 2.261ns (52.340%)  route 2.059ns (47.660%))
+  Data Path Delay:        4.426ns  (logic 2.323ns (52.482%)  route 2.103ns (47.518%))
   Logic Levels:           9  (CARRY4=8 LUT5=1)
-  Clock Path Skew:        -0.041ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.011ns = ( 15.011 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.311ns
-    Clock Pessimism Removal (CPR):    0.259ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.709     5.311    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.456     5.767 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          1.211     6.978    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X3Y96          CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.580     7.558 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
-                         net (fo=1, routed)           0.000     7.558    U_JOHNSON_COUNTER/count_reg0_carry_n_0
-    SLICE_X3Y97          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.672 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
-                         net (fo=1, routed)           0.000     7.672    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
-    SLICE_X3Y98          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.786 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.786    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
-    SLICE_X3Y99          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.900 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
-                         net (fo=1, routed)           0.001     7.901    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
-    SLICE_X3Y100         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.015 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     8.015    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
-    SLICE_X3Y101         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.129 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     8.129    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
-    SLICE_X3Y102         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.243 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     8.243    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
-    SLICE_X3Y103         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     8.482 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[2]
-                         net (fo=1, routed)           0.847     9.329    U_JOHNSON_COUNTER/data0[31]
-    SLICE_X2Y103         LUT5 (Prop_lut5_I4_O)        0.302     9.631 r  U_JOHNSON_COUNTER/count_reg[31]_i_1/O
-                         net (fo=1, routed)           0.000     9.631    U_JOHNSON_COUNTER/count_reg_0[31]
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[31]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    E3                                                0.000    10.000 r  CLK (IN)
-                         net (fo=0)                   0.000    10.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.589    15.011    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y103         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[31]/C
-                         clock pessimism              0.259    15.270    
-                         clock uncertainty           -0.035    15.235    
-    SLICE_X2Y103         FDCE (Setup_fdce_C_D)        0.079    15.314    U_JOHNSON_COUNTER/count_reg_reg[31]
-  -------------------------------------------------------------------
-                         required time                         15.314    
-                         arrival time                          -9.631    
-  -------------------------------------------------------------------
-                         slack                                  5.683    
-
-Slack (MET) :             5.882ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[28]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.089ns  (logic 2.225ns (54.420%)  route 1.864ns (45.580%))
-  Logic Levels:           8  (CARRY4=7 LUT5=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.311ns
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.014ns = ( 15.014 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
     Clock Pessimism Removal (CPR):    0.276ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -725,35 +221,38 @@ Slack (MET) :             5.882ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.709     5.311    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.456     5.767 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          1.211     6.978    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X3Y96          CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.580     7.558 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
-                         net (fo=1, routed)           0.000     7.558    U_JOHNSON_COUNTER/count_reg0_carry_n_0
-    SLICE_X3Y97          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.672 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
-                         net (fo=1, routed)           0.000     7.672    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
-    SLICE_X3Y98          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.786 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     7.786    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
-    SLICE_X3Y99          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.900 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
-                         net (fo=1, routed)           0.001     7.901    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
-    SLICE_X3Y100         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.015 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     8.015    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
-    SLICE_X3Y101         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.129 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     8.129    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
-    SLICE_X3Y102         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     8.442 r  U_JOHNSON_COUNTER/count_reg0_carry__5/O[3]
-                         net (fo=1, routed)           0.652     9.094    U_JOHNSON_COUNTER/data0[28]
-    SLICE_X4Y102         LUT5 (Prop_lut5_I4_O)        0.306     9.400 r  U_JOHNSON_COUNTER/count_reg[28]_i_1/O
-                         net (fo=1, routed)           0.000     9.400    U_JOHNSON_COUNTER/count_reg_0[28]
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[28]/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.097 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     8.097    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
+    SLICE_X4Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.211 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.211    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
+    SLICE_X4Y72          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     8.450 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[2]
+                         net (fo=1, routed)           0.990     9.440    U_JOHNSON_COUNTER/data0[31]
+    SLICE_X5Y71          LUT5 (Prop_lut5_I4_O)        0.302     9.742 r  U_JOHNSON_COUNTER/count_reg[31]_i_1/O
+                         net (fo=1, routed)           0.000     9.742    U_JOHNSON_COUNTER/count_reg_0[31]
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[31]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -763,31 +262,349 @@ Slack (MET) :             5.882ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.588    15.010    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y102         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[28]/C
-                         clock pessimism              0.276    15.286    
-                         clock uncertainty           -0.035    15.251    
-    SLICE_X4Y102         FDCE (Setup_fdce_C_D)        0.031    15.282    U_JOHNSON_COUNTER/count_reg_reg[28]
+                         net (fo=66, routed)          1.591    15.014    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[31]/C
+                         clock pessimism              0.276    15.290    
+                         clock uncertainty           -0.035    15.254    
+    SLICE_X5Y71          FDCE (Setup_fdce_C_D)        0.031    15.285    U_JOHNSON_COUNTER/count_reg_reg[31]
   -------------------------------------------------------------------
-                         required time                         15.282    
-                         arrival time                          -9.400    
+                         required time                         15.285    
+                         arrival time                          -9.742    
   -------------------------------------------------------------------
-                         slack                                  5.882    
+                         slack                                  5.543    
+
+Slack (MET) :             5.621ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[30]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.349ns  (logic 2.419ns (55.623%)  route 1.930ns (44.377%))
+  Logic Levels:           9  (CARRY4=8 LUT5=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.014ns = ( 15.014 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.097 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     8.097    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
+    SLICE_X4Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.211 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.211    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
+    SLICE_X4Y72          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.545 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[1]
+                         net (fo=1, routed)           0.816     9.362    U_JOHNSON_COUNTER/data0[30]
+    SLICE_X5Y71          LUT5 (Prop_lut5_I4_O)        0.303     9.665 r  U_JOHNSON_COUNTER/count_reg[30]_i_1/O
+                         net (fo=1, routed)           0.000     9.665    U_JOHNSON_COUNTER/count_reg_0[30]
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.591    15.014    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[30]/C
+                         clock pessimism              0.276    15.290    
+                         clock uncertainty           -0.035    15.254    
+    SLICE_X5Y71          FDCE (Setup_fdce_C_D)        0.031    15.285    U_JOHNSON_COUNTER/count_reg_reg[30]
+  -------------------------------------------------------------------
+                         required time                         15.285    
+                         arrival time                          -9.665    
+  -------------------------------------------------------------------
+                         slack                                  5.621    
 
 Slack (MET) :             5.905ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[6]/C
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[28]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.062ns  (logic 2.287ns (56.300%)  route 1.775ns (43.700%))
+  Logic Levels:           8  (CARRY4=7 LUT5=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.014ns = ( 15.014 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.097 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     8.097    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
+    SLICE_X4Y71          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     8.410 r  U_JOHNSON_COUNTER/count_reg0_carry__5/O[3]
+                         net (fo=1, routed)           0.662     9.072    U_JOHNSON_COUNTER/data0[28]
+    SLICE_X5Y71          LUT5 (Prop_lut5_I4_O)        0.306     9.378 r  U_JOHNSON_COUNTER/count_reg[28]_i_1/O
+                         net (fo=1, routed)           0.000     9.378    U_JOHNSON_COUNTER/count_reg_0[28]
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.591    15.014    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[28]/C
+                         clock pessimism              0.276    15.290    
+                         clock uncertainty           -0.035    15.254    
+    SLICE_X5Y71          FDCE (Setup_fdce_C_D)        0.029    15.283    U_JOHNSON_COUNTER/count_reg_reg[28]
+  -------------------------------------------------------------------
+                         required time                         15.283    
+                         arrival time                          -9.378    
+  -------------------------------------------------------------------
+                         slack                                  5.905    
+
+Slack (MET) :             5.952ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[25]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.018ns  (logic 2.189ns (54.475%)  route 1.829ns (45.525%))
+  Logic Levels:           8  (CARRY4=7 LUT5=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.015ns = ( 15.015 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.097 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     8.097    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
+    SLICE_X4Y71          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.319 r  U_JOHNSON_COUNTER/count_reg0_carry__5/O[0]
+                         net (fo=1, routed)           0.716     9.035    U_JOHNSON_COUNTER/data0[25]
+    SLICE_X5Y70          LUT5 (Prop_lut5_I4_O)        0.299     9.334 r  U_JOHNSON_COUNTER/count_reg[25]_i_1/O
+                         net (fo=1, routed)           0.000     9.334    U_JOHNSON_COUNTER/count_reg_0[25]
+    SLICE_X5Y70          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.592    15.015    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y70          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[25]/C
+                         clock pessimism              0.276    15.291    
+                         clock uncertainty           -0.035    15.255    
+    SLICE_X5Y70          FDCE (Setup_fdce_C_D)        0.031    15.286    U_JOHNSON_COUNTER/count_reg_reg[25]
+  -------------------------------------------------------------------
+                         required time                         15.286    
+                         arrival time                          -9.334    
+  -------------------------------------------------------------------
+                         slack                                  5.952    
+
+Slack (MET) :             6.000ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[29]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.017ns  (logic 2.303ns (57.325%)  route 1.714ns (42.675%))
+  Logic Levels:           9  (CARRY4=8 LUT5=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.014ns = ( 15.014 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.097 r  U_JOHNSON_COUNTER/count_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     8.097    U_JOHNSON_COUNTER/count_reg0_carry__4_n_0
+    SLICE_X4Y71          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.211 r  U_JOHNSON_COUNTER/count_reg0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     8.211    U_JOHNSON_COUNTER/count_reg0_carry__5_n_0
+    SLICE_X4Y72          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.433 r  U_JOHNSON_COUNTER/count_reg0_carry__6/O[0]
+                         net (fo=1, routed)           0.601     9.034    U_JOHNSON_COUNTER/data0[29]
+    SLICE_X6Y71          LUT5 (Prop_lut5_I4_O)        0.299     9.333 r  U_JOHNSON_COUNTER/count_reg[29]_i_1/O
+                         net (fo=1, routed)           0.000     9.333    U_JOHNSON_COUNTER/count_reg_0[29]
+    SLICE_X6Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.591    15.014    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y71          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[29]/C
+                         clock pessimism              0.276    15.290    
+                         clock uncertainty           -0.035    15.254    
+    SLICE_X6Y71          FDCE (Setup_fdce_C_D)        0.079    15.333    U_JOHNSON_COUNTER/count_reg_reg[29]
+  -------------------------------------------------------------------
+                         required time                         15.333    
+                         arrival time                          -9.333    
+  -------------------------------------------------------------------
+                         slack                                  6.000    
+
+Slack (MET) :             6.020ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            U_JOHNSON_COUNTER/count_reg_reg[24]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.002ns  (logic 0.890ns (22.242%)  route 3.112ns (77.758%))
-  Logic Levels:           3  (LUT4=1 LUT5=2)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.012ns = ( 15.012 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.329ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Data Path Delay:        3.948ns  (logic 2.173ns (55.038%)  route 1.775ns (44.962%))
+  Logic Levels:           7  (CARRY4=6 LUT5=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.015ns = ( 15.015 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -803,18 +620,32 @@ Slack (MET) :             5.905ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.726     5.329    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y97          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[6]/C
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y97          FDCE (Prop_fdce_C_Q)         0.518     5.847 r  U_JOHNSON_COUNTER/count_reg_reg[6]/Q
-                         net (fo=2, routed)           0.870     6.717    U_JOHNSON_COUNTER/count_reg[6]
-    SLICE_X2Y97          LUT4 (Prop_lut4_I1_O)        0.124     6.841 r  U_JOHNSON_COUNTER/count_reg[31]_i_6/O
-                         net (fo=1, routed)           0.427     7.268    U_JOHNSON_COUNTER/count_reg[31]_i_6_n_0
-    SLICE_X2Y96          LUT5 (Prop_lut5_I4_O)        0.124     7.392 r  U_JOHNSON_COUNTER/count_reg[31]_i_3/O
-                         net (fo=33, routed)          1.815     9.206    U_JOHNSON_COUNTER/count_reg[31]_i_3_n_0
-    SLICE_X2Y101         LUT5 (Prop_lut5_I2_O)        0.124     9.330 r  U_JOHNSON_COUNTER/count_reg[24]_i_1/O
-                         net (fo=1, routed)           0.000     9.330    U_JOHNSON_COUNTER/count_reg_0[24]
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[24]/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     8.296 r  U_JOHNSON_COUNTER/count_reg0_carry__4/O[3]
+                         net (fo=1, routed)           0.662     8.958    U_JOHNSON_COUNTER/data0[24]
+    SLICE_X5Y70          LUT5 (Prop_lut5_I4_O)        0.306     9.264 r  U_JOHNSON_COUNTER/count_reg[24]_i_1/O
+                         net (fo=1, routed)           0.000     9.264    U_JOHNSON_COUNTER/count_reg_0[24]
+    SLICE_X5Y70          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[24]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -824,31 +655,31 @@ Slack (MET) :             5.905ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.590    15.012    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[24]/C
-                         clock pessimism              0.180    15.192    
-                         clock uncertainty           -0.035    15.157    
-    SLICE_X2Y101         FDCE (Setup_fdce_C_D)        0.079    15.236    U_JOHNSON_COUNTER/count_reg_reg[24]
+                         net (fo=66, routed)          1.592    15.015    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y70          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[24]/C
+                         clock pessimism              0.276    15.291    
+                         clock uncertainty           -0.035    15.255    
+    SLICE_X5Y70          FDCE (Setup_fdce_C_D)        0.029    15.284    U_JOHNSON_COUNTER/count_reg_reg[24]
   -------------------------------------------------------------------
-                         required time                         15.236    
-                         arrival time                          -9.330    
+                         required time                         15.284    
+                         arrival time                          -9.264    
   -------------------------------------------------------------------
-                         slack                                  5.905    
+                         slack                                  6.020    
 
-Slack (MET) :             5.909ns  (required time - arrival time)
-  Source:                 U_JOHNSON_COUNTER/count_reg_reg[6]/C
+Slack (MET) :             6.128ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/count_reg_reg[23]/D
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[21]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.998ns  (logic 0.890ns (22.264%)  route 3.108ns (77.736%))
-  Logic Levels:           3  (LUT4=1 LUT5=2)
-  Clock Path Skew:        -0.137ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.012ns = ( 15.012 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.329ns
-    Clock Pessimism Removal (CPR):    0.180ns
+  Data Path Delay:        3.842ns  (logic 2.075ns (54.006%)  route 1.767ns (45.994%))
+  Logic Levels:           7  (CARRY4=6 LUT5=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.015ns = ( 15.015 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -864,18 +695,32 @@ Slack (MET) :             5.909ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           2.025     3.506    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.726     5.329    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y97          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[6]/C
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y97          FDCE (Prop_fdce_C_Q)         0.518     5.847 r  U_JOHNSON_COUNTER/count_reg_reg[6]/Q
-                         net (fo=2, routed)           0.870     6.717    U_JOHNSON_COUNTER/count_reg[6]
-    SLICE_X2Y97          LUT4 (Prop_lut4_I1_O)        0.124     6.841 r  U_JOHNSON_COUNTER/count_reg[31]_i_6/O
-                         net (fo=1, routed)           0.427     7.268    U_JOHNSON_COUNTER/count_reg[31]_i_6_n_0
-    SLICE_X2Y96          LUT5 (Prop_lut5_I4_O)        0.124     7.392 r  U_JOHNSON_COUNTER/count_reg[31]_i_3/O
-                         net (fo=33, routed)          1.811     9.202    U_JOHNSON_COUNTER/count_reg[31]_i_3_n_0
-    SLICE_X2Y101         LUT5 (Prop_lut5_I2_O)        0.124     9.326 r  U_JOHNSON_COUNTER/count_reg[23]_i_1/O
-                         net (fo=1, routed)           0.000     9.326    U_JOHNSON_COUNTER/count_reg_0[23]
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[23]/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.983 r  U_JOHNSON_COUNTER/count_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.983    U_JOHNSON_COUNTER/count_reg0_carry__3_n_0
+    SLICE_X4Y70          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.205 r  U_JOHNSON_COUNTER/count_reg0_carry__4/O[0]
+                         net (fo=1, routed)           0.654     8.859    U_JOHNSON_COUNTER/data0[21]
+    SLICE_X5Y69          LUT5 (Prop_lut5_I4_O)        0.299     9.158 r  U_JOHNSON_COUNTER/count_reg[21]_i_1/O
+                         net (fo=1, routed)           0.000     9.158    U_JOHNSON_COUNTER/count_reg_0[21]
+    SLICE_X5Y69          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[21]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -885,16 +730,221 @@ Slack (MET) :             5.909ns  (required time - arrival time)
     E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           1.920    13.331    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          1.590    15.012    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[23]/C
-                         clock pessimism              0.180    15.192    
-                         clock uncertainty           -0.035    15.157    
-    SLICE_X2Y101         FDCE (Setup_fdce_C_D)        0.079    15.236    U_JOHNSON_COUNTER/count_reg_reg[23]
+                         net (fo=66, routed)          1.592    15.015    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y69          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[21]/C
+                         clock pessimism              0.276    15.291    
+                         clock uncertainty           -0.035    15.255    
+    SLICE_X5Y69          FDCE (Setup_fdce_C_D)        0.031    15.286    U_JOHNSON_COUNTER/count_reg_reg[21]
   -------------------------------------------------------------------
-                         required time                         15.236    
-                         arrival time                          -9.326    
+                         required time                         15.286    
+                         arrival time                          -9.158    
   -------------------------------------------------------------------
-                         slack                                  5.909    
+                         slack                                  6.128    
+
+Slack (MET) :             6.137ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[20]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.833ns  (logic 2.059ns (53.715%)  route 1.774ns (46.285%))
+  Logic Levels:           6  (CARRY4=5 LUT5=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.015ns = ( 15.015 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     8.182 r  U_JOHNSON_COUNTER/count_reg0_carry__3/O[3]
+                         net (fo=1, routed)           0.661     8.843    U_JOHNSON_COUNTER/data0[20]
+    SLICE_X5Y69          LUT5 (Prop_lut5_I4_O)        0.306     9.149 r  U_JOHNSON_COUNTER/count_reg[20]_i_1/O
+                         net (fo=1, routed)           0.000     9.149    U_JOHNSON_COUNTER/count_reg_0[20]
+    SLICE_X5Y69          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.592    15.015    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y69          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[20]/C
+                         clock pessimism              0.276    15.291    
+                         clock uncertainty           -0.035    15.255    
+    SLICE_X5Y69          FDCE (Setup_fdce_C_D)        0.031    15.286    U_JOHNSON_COUNTER/count_reg_reg[20]
+  -------------------------------------------------------------------
+                         required time                         15.286    
+                         arrival time                          -9.149    
+  -------------------------------------------------------------------
+                         slack                                  6.137    
+
+Slack (MET) :             6.208ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[23]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[9]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.768ns  (logic 0.890ns (23.618%)  route 2.878ns (76.382%))
+  Logic Levels:           3  (LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.019ns = ( 15.019 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.314ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.711     5.314    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y70          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y70          FDCE (Prop_fdce_C_Q)         0.518     5.832 f  U_JOHNSON_COUNTER/count_reg_reg[23]/Q
+                         net (fo=2, routed)           0.800     6.632    U_JOHNSON_COUNTER/count_reg[23]
+    SLICE_X5Y70          LUT4 (Prop_lut4_I0_O)        0.124     6.756 r  U_JOHNSON_COUNTER/count_reg[31]_i_7/O
+                         net (fo=1, routed)           0.808     7.564    U_JOHNSON_COUNTER/count_reg[31]_i_7_n_0
+    SLICE_X5Y70          LUT6 (Prop_lut6_I0_O)        0.124     7.688 r  U_JOHNSON_COUNTER/count_reg[31]_i_4/O
+                         net (fo=33, routed)          1.270     8.958    U_JOHNSON_COUNTER/count_reg[31]_i_4_n_0
+    SLICE_X5Y66          LUT5 (Prop_lut5_I3_O)        0.124     9.082 r  U_JOHNSON_COUNTER/count_reg[9]_i_1/O
+                         net (fo=1, routed)           0.000     9.082    U_JOHNSON_COUNTER/count_reg_0[9]
+    SLICE_X5Y66          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.596    15.019    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y66          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[9]/C
+                         clock pessimism              0.276    15.295    
+                         clock uncertainty           -0.035    15.259    
+    SLICE_X5Y66          FDCE (Setup_fdce_C_D)        0.031    15.290    U_JOHNSON_COUNTER/count_reg_reg[9]
+  -------------------------------------------------------------------
+                         required time                         15.290    
+                         arrival time                          -9.082    
+  -------------------------------------------------------------------
+                         slack                                  6.208    
+
+Slack (MET) :             6.243ns  (required time - arrival time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[17]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.728ns  (logic 1.961ns (52.599%)  route 1.767ns (47.401%))
+  Logic Levels:           6  (CARRY4=5 LUT5=1)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.016ns = ( 15.016 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.316ns
+    Clock Pessimism Removal (CPR):    0.276ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.713     5.316    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.518     5.834 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          1.113     6.947    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X4Y65          CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     7.527 r  U_JOHNSON_COUNTER/count_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.527    U_JOHNSON_COUNTER/count_reg0_carry_n_0
+    SLICE_X4Y66          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.641 r  U_JOHNSON_COUNTER/count_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.641    U_JOHNSON_COUNTER/count_reg0_carry__0_n_0
+    SLICE_X4Y67          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.755 r  U_JOHNSON_COUNTER/count_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.755    U_JOHNSON_COUNTER/count_reg0_carry__1_n_0
+    SLICE_X4Y68          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.869 r  U_JOHNSON_COUNTER/count_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.869    U_JOHNSON_COUNTER/count_reg0_carry__2_n_0
+    SLICE_X4Y69          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222     8.091 r  U_JOHNSON_COUNTER/count_reg0_carry__3/O[0]
+                         net (fo=1, routed)           0.654     8.745    U_JOHNSON_COUNTER/data0[17]
+    SLICE_X5Y68          LUT5 (Prop_lut5_I4_O)        0.299     9.044 r  U_JOHNSON_COUNTER/count_reg[17]_i_1/O
+                         net (fo=1, routed)           0.000     9.044    U_JOHNSON_COUNTER/count_reg_0[17]
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK (IN)
+                         net (fo=0)                   0.000    10.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          1.593    15.016    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[17]/C
+                         clock pessimism              0.276    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X5Y68          FDCE (Setup_fdce_C_D)        0.031    15.287    U_JOHNSON_COUNTER/count_reg_reg[17]
+  -------------------------------------------------------------------
+                         required time                         15.287    
+                         arrival time                          -9.044    
+  -------------------------------------------------------------------
+                         slack                                  6.243    
 
 
 
@@ -902,71 +952,20 @@ Slack (MET) :             5.909ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.131ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/result_reg[1]_C/C
+Slack (MET) :             0.152ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/result_reg[11]_C/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[2]_C/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.531ns  (logic 0.186ns (35.023%)  route 0.345ns (64.977%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.279ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
-    Source Clock Delay      (SCD):    1.518ns
-    Clock Pessimism Removal (CPR):    0.245ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X0Y100         FDCE                                         r  U_JOHNSON_COUNTER/result_reg[1]_C/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y100         FDCE (Prop_fdce_C_Q)         0.141     1.659 r  U_JOHNSON_COUNTER/result_reg[1]_C/Q
-                         net (fo=2, routed)           0.345     2.005    U_JOHNSON_COUNTER/result_reg[1]_C_n_0
-    SLICE_X2Y99          LUT6 (Prop_lut6_I1_O)        0.045     2.050 r  U_JOHNSON_COUNTER/result[2]_C_i_1/O
-                         net (fo=2, routed)           0.000     2.050    U_JOHNSON_COUNTER/p_2_in[2]
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[2]_C/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[2]_C/C
-                         clock pessimism             -0.245     1.797    
-    SLICE_X2Y99          FDCE (Hold_fdce_C_D)         0.121     1.918    U_JOHNSON_COUNTER/result_reg[2]_C
-  -------------------------------------------------------------------
-                         required time                         -1.918    
-                         arrival time                           2.050    
-  -------------------------------------------------------------------
-                         slack                                  0.131    
-
-Slack (MET) :             0.180ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/result_reg[11]_P/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[10]_P/D
+  Destination:            U_JOHNSON_COUNTER/result_reg[12]_P/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.284ns  (logic 0.186ns (65.536%)  route 0.098ns (34.464%))
+  Data Path Delay:        0.257ns  (logic 0.186ns (72.506%)  route 0.071ns (27.494%))
   Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
-    Source Clock Delay      (SCD):    1.524ns
-    Clock Pessimism Removal (CPR):    0.505ns
+    Destination Clock Delay (DCD):    2.035ns
+    Source Clock Delay      (SCD):    1.518ns
+    Clock Pessimism Removal (CPR):    0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -977,14 +976,14 @@ Slack (MET) :             0.180ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.605     1.524    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X0Y98          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[11]_P/C
+                         net (fo=66, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X1Y66          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[11]_C/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y98          FDPE (Prop_fdpe_C_Q)         0.141     1.665 r  U_JOHNSON_COUNTER/result_reg[11]_P/Q
-                         net (fo=3, routed)           0.098     1.763    U_JOHNSON_COUNTER/result_reg[11]_P_n_0
-    SLICE_X1Y98          LUT6 (Prop_lut6_I3_O)        0.045     1.808 r  U_JOHNSON_COUNTER/result[10]_C_i_1/O
-                         net (fo=2, routed)           0.000     1.808    U_JOHNSON_COUNTER/p_2_in[10]
-    SLICE_X1Y98          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[10]_P/D
+    SLICE_X1Y66          FDCE (Prop_fdce_C_Q)         0.141     1.659 r  U_JOHNSON_COUNTER/result_reg[11]_C/Q
+                         net (fo=2, routed)           0.071     1.730    U_JOHNSON_COUNTER/result_reg[11]_C_n_0
+    SLICE_X0Y66          LUT6 (Prop_lut6_I3_O)        0.045     1.775 r  U_JOHNSON_COUNTER/result[12]_C_i_1/O
+                         net (fo=2, routed)           0.000     1.775    U_JOHNSON_COUNTER/p_2_in[12]
+    SLICE_X0Y66          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[12]_P/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -994,30 +993,81 @@ Slack (MET) :             0.180ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X1Y98          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[10]_P/C
-                         clock pessimism             -0.505     1.537    
-    SLICE_X1Y98          FDPE (Hold_fdpe_C_D)         0.091     1.628    U_JOHNSON_COUNTER/result_reg[10]_P
+                         net (fo=66, routed)          0.870     2.035    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X0Y66          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[12]_P/C
+                         clock pessimism             -0.503     1.531    
+    SLICE_X0Y66          FDPE (Hold_fdpe_C_D)         0.092     1.623    U_JOHNSON_COUNTER/result_reg[12]_P
   -------------------------------------------------------------------
-                         required time                         -1.628    
-                         arrival time                           1.808    
+                         required time                         -1.623    
+                         arrival time                           1.775    
   -------------------------------------------------------------------
-                         slack                                  0.180    
+                         slack                                  0.152    
 
-Slack (MET) :             0.202ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/PROut_reg/C
+Slack (MET) :             0.243ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/result_reg[11]_C/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[6]_P/CE
+  Destination:            U_JOHNSON_COUNTER/result_reg[12]_C/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.313ns  (logic 0.186ns (59.497%)  route 0.127ns (40.503%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.035ns
+    Source Clock Delay      (SCD):    1.518ns
+    Clock Pessimism Removal (CPR):    0.516ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X1Y66          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[11]_C/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y66          FDCE (Prop_fdce_C_Q)         0.141     1.659 r  U_JOHNSON_COUNTER/result_reg[11]_C/Q
+                         net (fo=2, routed)           0.071     1.730    U_JOHNSON_COUNTER/result_reg[11]_C_n_0
+    SLICE_X0Y66          LUT6 (Prop_lut6_I3_O)        0.045     1.775 r  U_JOHNSON_COUNTER/result[12]_C_i_1/O
+                         net (fo=2, routed)           0.056     1.831    U_JOHNSON_COUNTER/p_2_in[12]
+    SLICE_X1Y66          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[12]_C/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.870     2.035    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X1Y66          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[12]_C/C
+                         clock pessimism             -0.516     1.518    
+    SLICE_X1Y66          FDCE (Hold_fdce_C_D)         0.070     1.588    U_JOHNSON_COUNTER/result_reg[12]_C
+  -------------------------------------------------------------------
+                         required time                         -1.588    
+                         arrival time                           1.831    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.267ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/result_reg[10]_P/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/result_reg[11]_P/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.442ns  (logic 0.164ns (37.111%)  route 0.278ns (62.889%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.279ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
+  Data Path Delay:        0.359ns  (logic 0.186ns (51.842%)  route 0.173ns (48.158%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.035ns
     Source Clock Delay      (SCD):    1.518ns
-    Clock Pessimism Removal (CPR):    0.245ns
+    Clock Pessimism Removal (CPR):    0.516ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1028,12 +1078,14 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/PROut_reg/C
+                         net (fo=66, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X0Y66          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[10]_P/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y101         FDCE (Prop_fdce_C_Q)         0.164     1.682 r  U_JOHNSON_COUNTER/PROut_reg/Q
-                         net (fo=32, routed)          0.278     1.960    U_JOHNSON_COUNTER/PROut
-    SLICE_X3Y99          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[6]_P/CE
+    SLICE_X0Y66          FDPE (Prop_fdpe_C_Q)         0.141     1.659 r  U_JOHNSON_COUNTER/result_reg[10]_P/Q
+                         net (fo=2, routed)           0.173     1.832    U_JOHNSON_COUNTER/result_reg[10]_P_n_0
+    SLICE_X0Y66          LUT6 (Prop_lut6_I5_O)        0.045     1.877 r  U_JOHNSON_COUNTER/result[11]_C_i_1/O
+                         net (fo=2, routed)           0.000     1.877    U_JOHNSON_COUNTER/p_2_in[11]
+    SLICE_X0Y66          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[11]_P/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1043,30 +1095,30 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X3Y99          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[6]_P/C
-                         clock pessimism             -0.245     1.797    
-    SLICE_X3Y99          FDPE (Hold_fdpe_C_CE)       -0.039     1.758    U_JOHNSON_COUNTER/result_reg[6]_P
+                         net (fo=66, routed)          0.870     2.035    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X0Y66          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[11]_P/C
+                         clock pessimism             -0.516     1.518    
+    SLICE_X0Y66          FDPE (Hold_fdpe_C_D)         0.092     1.610    U_JOHNSON_COUNTER/result_reg[11]_P
   -------------------------------------------------------------------
-                         required time                         -1.758    
-                         arrival time                           1.960    
+                         required time                         -1.610    
+                         arrival time                           1.877    
   -------------------------------------------------------------------
-                         slack                                  0.202    
+                         slack                                  0.267    
 
-Slack (MET) :             0.202ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/PROut_reg/C
+Slack (MET) :             0.275ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[7]_P/CE
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.442ns  (logic 0.164ns (37.111%)  route 0.278ns (62.889%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.279ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
-    Source Clock Delay      (SCD):    1.518ns
-    Clock Pessimism Removal (CPR):    0.245ns
+  Data Path Delay:        0.382ns  (logic 0.209ns (54.728%)  route 0.173ns (45.272%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.031ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.500ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1077,12 +1129,14 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/PROut_reg/C
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y101         FDCE (Prop_fdce_C_Q)         0.164     1.682 r  U_JOHNSON_COUNTER/PROut_reg/Q
-                         net (fo=32, routed)          0.278     1.960    U_JOHNSON_COUNTER/PROut
-    SLICE_X3Y99          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[7]_P/CE
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.173     1.852    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X5Y67          LUT5 (Prop_lut5_I0_O)        0.045     1.897 r  U_JOHNSON_COUNTER/count_reg[12]_i_1/O
+                         net (fo=1, routed)           0.000     1.897    U_JOHNSON_COUNTER/count_reg_0[12]
+    SLICE_X5Y67          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1092,17 +1146,68 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X3Y99          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[7]_P/C
-                         clock pessimism             -0.245     1.797    
-    SLICE_X3Y99          FDPE (Hold_fdpe_C_CE)       -0.039     1.758    U_JOHNSON_COUNTER/result_reg[7]_P
+                         net (fo=66, routed)          0.866     2.031    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y67          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[12]/C
+                         clock pessimism             -0.500     1.530    
+    SLICE_X5Y67          FDCE (Hold_fdce_C_D)         0.092     1.622    U_JOHNSON_COUNTER/count_reg_reg[12]
   -------------------------------------------------------------------
-                         required time                         -1.758    
-                         arrival time                           1.960    
+                         required time                         -1.622    
+                         arrival time                           1.897    
   -------------------------------------------------------------------
-                         slack                                  0.202    
+                         slack                                  0.275    
 
-Slack (MET) :             0.202ns  (arrival time - required time)
+Slack (MET) :             0.287ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[14]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.418ns  (logic 0.207ns (49.560%)  route 0.211ns (50.440%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.514ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.211     1.890    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X6Y68          LUT5 (Prop_lut5_I0_O)        0.043     1.933 r  U_JOHNSON_COUNTER/count_reg[14]_i_1/O
+                         net (fo=1, routed)           0.000     1.933    U_JOHNSON_COUNTER/count_reg_0[14]
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.865     2.030    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[14]/C
+                         clock pessimism             -0.514     1.515    
+    SLICE_X6Y68          FDCE (Hold_fdce_C_D)         0.131     1.646    U_JOHNSON_COUNTER/count_reg_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.646    
+                         arrival time                           1.933    
+  -------------------------------------------------------------------
+                         slack                                  0.287    
+
+Slack (MET) :             0.299ns  (arrival time - required time)
   Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            U_JOHNSON_COUNTER/count_reg_reg[16]/D
@@ -1110,12 +1215,12 @@ Slack (MET) :             0.202ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.571ns  (logic 0.186ns (32.560%)  route 0.385ns (67.440%))
+  Data Path Delay:        0.420ns  (logic 0.209ns (49.800%)  route 0.211ns (50.200%))
   Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.277ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.040ns
-    Source Clock Delay      (SCD):    1.517ns
-    Clock Pessimism Removal (CPR):    0.245ns
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.514ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1126,14 +1231,14 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.598     1.517    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.141     1.658 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          0.385     2.044    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X4Y99          LUT5 (Prop_lut5_I0_O)        0.045     2.089 r  U_JOHNSON_COUNTER/count_reg[16]_i_1/O
-                         net (fo=1, routed)           0.000     2.089    U_JOHNSON_COUNTER/count_reg_0[16]
-    SLICE_X4Y99          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[16]/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.211     1.890    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X6Y68          LUT5 (Prop_lut5_I0_O)        0.045     1.935 r  U_JOHNSON_COUNTER/count_reg[16]_i_1/O
+                         net (fo=1, routed)           0.000     1.935    U_JOHNSON_COUNTER/count_reg_0[16]
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[16]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1143,30 +1248,30 @@ Slack (MET) :             0.202ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.875     2.040    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y99          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[16]/C
-                         clock pessimism             -0.245     1.794    
-    SLICE_X4Y99          FDCE (Hold_fdce_C_D)         0.092     1.886    U_JOHNSON_COUNTER/count_reg_reg[16]
+                         net (fo=66, routed)          0.865     2.030    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[16]/C
+                         clock pessimism             -0.514     1.515    
+    SLICE_X6Y68          FDCE (Hold_fdce_C_D)         0.121     1.636    U_JOHNSON_COUNTER/count_reg_reg[16]
   -------------------------------------------------------------------
-                         required time                         -1.886    
-                         arrival time                           2.089    
+                         required time                         -1.636    
+                         arrival time                           1.935    
   -------------------------------------------------------------------
-                         slack                                  0.202    
+                         slack                                  0.299    
 
-Slack (MET) :             0.205ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/result_reg[6]_C/C
+Slack (MET) :             0.300ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[5]_C/D
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[0]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.547ns  (logic 0.209ns (38.224%)  route 0.338ns (61.776%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.037ns
-    Source Clock Delay      (SCD):    1.524ns
-    Clock Pessimism Removal (CPR):    0.245ns
+  Data Path Delay:        0.420ns  (logic 0.209ns (49.800%)  route 0.211ns (50.200%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.514ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1177,14 +1282,14 @@ Slack (MET) :             0.205ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.605     1.524    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[6]_C/C
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y99          FDCE (Prop_fdce_C_Q)         0.164     1.688 r  U_JOHNSON_COUNTER/result_reg[6]_C/Q
-                         net (fo=3, routed)           0.128     1.816    U_JOHNSON_COUNTER/result_reg[6]_C_n_0
-    SLICE_X0Y100         LUT6 (Prop_lut6_I5_O)        0.045     1.861 r  U_JOHNSON_COUNTER/result[5]_C_i_1/O
-                         net (fo=2, routed)           0.210     2.071    U_JOHNSON_COUNTER/p_2_in[5]
-    SLICE_X0Y100         FDCE                                         r  U_JOHNSON_COUNTER/result_reg[5]_C/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 f  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.211     1.890    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X6Y68          LUT4 (Prop_lut4_I3_O)        0.045     1.935 r  U_JOHNSON_COUNTER/count_reg[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.935    U_JOHNSON_COUNTER/count_reg_0[0]
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1194,17 +1299,119 @@ Slack (MET) :             0.205ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.872     2.037    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X0Y100         FDCE                                         r  U_JOHNSON_COUNTER/result_reg[5]_C/C
-                         clock pessimism             -0.245     1.791    
-    SLICE_X0Y100         FDCE (Hold_fdce_C_D)         0.075     1.866    U_JOHNSON_COUNTER/result_reg[5]_C
+                         net (fo=66, routed)          0.865     2.030    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                         clock pessimism             -0.514     1.515    
+    SLICE_X6Y68          FDCE (Hold_fdce_C_D)         0.120     1.635    U_JOHNSON_COUNTER/count_reg_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.866    
-                         arrival time                           2.071    
+                         required time                         -1.635    
+                         arrival time                           1.935    
   -------------------------------------------------------------------
-                         slack                                  0.205    
+                         slack                                  0.300    
 
-Slack (MET) :             0.205ns  (arrival time - required time)
+Slack (MET) :             0.300ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/result_reg[7]_C/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/result_reg[8]_C/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.372ns  (logic 0.186ns (50.026%)  route 0.186ns (49.974%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.036ns
+    Source Clock Delay      (SCD):    1.519ns
+    Clock Pessimism Removal (CPR):    0.516ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.600     1.519    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X0Y65          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[7]_C/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y65          FDCE (Prop_fdce_C_Q)         0.141     1.660 r  U_JOHNSON_COUNTER/result_reg[7]_C/Q
+                         net (fo=2, routed)           0.065     1.725    U_JOHNSON_COUNTER/result_reg[7]_C_n_0
+    SLICE_X1Y65          LUT6 (Prop_lut6_I3_O)        0.045     1.770 r  U_JOHNSON_COUNTER/result[8]_C_i_1/O
+                         net (fo=2, routed)           0.121     1.891    U_JOHNSON_COUNTER/p_2_in[8]
+    SLICE_X0Y65          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[8]_C/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.871     2.036    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X0Y65          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[8]_C/C
+                         clock pessimism             -0.516     1.519    
+    SLICE_X0Y65          FDCE (Hold_fdce_C_D)         0.072     1.591    U_JOHNSON_COUNTER/result_reg[8]_C
+  -------------------------------------------------------------------
+                         required time                         -1.591    
+                         arrival time                           1.891    
+  -------------------------------------------------------------------
+                         slack                                  0.300    
+
+Slack (MET) :             0.306ns  (arrival time - required time)
+  Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            U_JOHNSON_COUNTER/count_reg_reg[13]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.412ns  (logic 0.209ns (50.769%)  route 0.203ns (49.231%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.203     1.882    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X5Y68          LUT5 (Prop_lut5_I0_O)        0.045     1.927 r  U_JOHNSON_COUNTER/count_reg[13]_i_1/O
+                         net (fo=1, routed)           0.000     1.927    U_JOHNSON_COUNTER/count_reg_0[13]
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=66, routed)          0.865     2.030    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[13]/C
+                         clock pessimism             -0.500     1.529    
+    SLICE_X5Y68          FDCE (Hold_fdce_C_D)         0.092     1.621    U_JOHNSON_COUNTER/count_reg_reg[13]
+  -------------------------------------------------------------------
+                         required time                         -1.621    
+                         arrival time                           1.927    
+  -------------------------------------------------------------------
+                         slack                                  0.306    
+
+Slack (MET) :             0.344ns  (arrival time - required time)
   Source:                 U_JOHNSON_COUNTER/count_reg_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            U_JOHNSON_COUNTER/count_reg_reg[15]/D
@@ -1212,12 +1419,12 @@ Slack (MET) :             0.205ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.574ns  (logic 0.186ns (32.407%)  route 0.388ns (67.593%))
+  Data Path Delay:        0.465ns  (logic 0.210ns (45.194%)  route 0.255ns (54.806%))
   Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.277ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.040ns
-    Source Clock Delay      (SCD):    1.517ns
-    Clock Pessimism Removal (CPR):    0.245ns
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.500ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1228,65 +1435,14 @@ Slack (MET) :             0.205ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.644     0.894    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.598     1.517    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y100         FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
+                         net (fo=66, routed)          0.596     1.515    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X6Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y100         FDCE (Prop_fdce_C_Q)         0.141     1.658 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
-                         net (fo=34, routed)          0.388     2.046    U_JOHNSON_COUNTER/count_reg[0]
-    SLICE_X4Y99          LUT5 (Prop_lut5_I0_O)        0.045     2.091 r  U_JOHNSON_COUNTER/count_reg[15]_i_1/O
-                         net (fo=1, routed)           0.000     2.091    U_JOHNSON_COUNTER/count_reg_0[15]
-    SLICE_X4Y99          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[15]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.875     2.040    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X4Y99          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[15]/C
-                         clock pessimism             -0.245     1.794    
-    SLICE_X4Y99          FDCE (Hold_fdce_C_D)         0.092     1.886    U_JOHNSON_COUNTER/count_reg_reg[15]
-  -------------------------------------------------------------------
-                         required time                         -1.886    
-                         arrival time                           2.091    
-  -------------------------------------------------------------------
-                         slack                                  0.205    
-
-Slack (MET) :             0.227ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/result_reg[14]_P/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[15]_P/D
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.599ns  (logic 0.187ns (31.223%)  route 0.412ns (68.777%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.037ns
-    Source Clock Delay      (SCD):    1.524ns
-    Clock Pessimism Removal (CPR):    0.245ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.605     1.524    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X0Y99          FDPE                                         r  U_JOHNSON_COUNTER/result_reg[14]_P/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y99          FDPE (Prop_fdpe_C_Q)         0.141     1.665 r  U_JOHNSON_COUNTER/result_reg[14]_P/Q
-                         net (fo=3, routed)           0.412     2.077    U_JOHNSON_COUNTER/result_reg[14]_P_n_0
-    SLICE_X0Y101         LUT5 (Prop_lut5_I0_O)        0.046     2.123 r  U_JOHNSON_COUNTER/result[15]_P_i_1/O
-                         net (fo=1, routed)           0.000     2.123    U_JOHNSON_COUNTER/p_2_in[15]
-    SLICE_X0Y101         FDPE                                         r  U_JOHNSON_COUNTER/result_reg[15]_P/D
+    SLICE_X6Y68          FDCE (Prop_fdce_C_Q)         0.164     1.679 r  U_JOHNSON_COUNTER/count_reg_reg[0]/Q
+                         net (fo=34, routed)          0.255     1.934    U_JOHNSON_COUNTER/count_reg[0]
+    SLICE_X5Y68          LUT5 (Prop_lut5_I0_O)        0.046     1.980 r  U_JOHNSON_COUNTER/count_reg[15]_i_1/O
+                         net (fo=1, routed)           0.000     1.980    U_JOHNSON_COUNTER/count_reg_0[15]
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[15]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1296,113 +1452,15 @@ Slack (MET) :             0.227ns  (arrival time - required time)
     E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
                          net (fo=1, routed)           0.699     1.136    CLK_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.872     2.037    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X0Y101         FDPE                                         r  U_JOHNSON_COUNTER/result_reg[15]_P/C
-                         clock pessimism             -0.245     1.791    
-    SLICE_X0Y101         FDPE (Hold_fdpe_C_D)         0.105     1.896    U_JOHNSON_COUNTER/result_reg[15]_P
+                         net (fo=66, routed)          0.865     2.030    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
+    SLICE_X5Y68          FDCE                                         r  U_JOHNSON_COUNTER/count_reg_reg[15]/C
+                         clock pessimism             -0.500     1.529    
+    SLICE_X5Y68          FDCE (Hold_fdce_C_D)         0.107     1.636    U_JOHNSON_COUNTER/count_reg_reg[15]
   -------------------------------------------------------------------
-                         required time                         -1.896    
-                         arrival time                           2.123    
+                         required time                         -1.636    
+                         arrival time                           1.980    
   -------------------------------------------------------------------
-                         slack                                  0.227    
-
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/PROut_reg/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[12]_C/CE
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.502ns  (logic 0.164ns (32.657%)  route 0.338ns (67.343%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.279ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
-    Source Clock Delay      (SCD):    1.518ns
-    Clock Pessimism Removal (CPR):    0.245ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/PROut_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y101         FDCE (Prop_fdce_C_Q)         0.164     1.682 r  U_JOHNSON_COUNTER/PROut_reg/Q
-                         net (fo=32, routed)          0.338     2.021    U_JOHNSON_COUNTER/PROut
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[12]_C/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[12]_C/C
-                         clock pessimism             -0.245     1.797    
-    SLICE_X2Y99          FDCE (Hold_fdce_C_CE)       -0.016     1.781    U_JOHNSON_COUNTER/result_reg[12]_C
-  -------------------------------------------------------------------
-                         required time                         -1.781    
-                         arrival time                           2.021    
-  -------------------------------------------------------------------
-                         slack                                  0.239    
-
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 U_JOHNSON_COUNTER/PROut_reg/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            U_JOHNSON_COUNTER/result_reg[2]_C/CE
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.502ns  (logic 0.164ns (32.657%)  route 0.338ns (67.343%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.279ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.043ns
-    Source Clock Delay      (SCD):    1.518ns
-    Clock Pessimism Removal (CPR):    0.245ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.644     0.894    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.599     1.518    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y101         FDCE                                         r  U_JOHNSON_COUNTER/PROut_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y101         FDCE (Prop_fdce_C_Q)         0.164     1.682 r  U_JOHNSON_COUNTER/PROut_reg/Q
-                         net (fo=32, routed)          0.338     2.021    U_JOHNSON_COUNTER/PROut
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[2]_C/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK_IBUF_inst/O
-                         net (fo=1, routed)           0.699     1.136    CLK_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK_IBUF_BUFG_inst/O
-                         net (fo=65, routed)          0.878     2.043    U_JOHNSON_COUNTER/CLK_IBUF_BUFG
-    SLICE_X2Y99          FDCE                                         r  U_JOHNSON_COUNTER/result_reg[2]_C/C
-                         clock pessimism             -0.245     1.797    
-    SLICE_X2Y99          FDCE (Hold_fdce_C_CE)       -0.016     1.781    U_JOHNSON_COUNTER/result_reg[2]_C
-  -------------------------------------------------------------------
-                         required time                         -1.781    
-                         arrival time                           2.021    
-  -------------------------------------------------------------------
-                         slack                                  0.239    
+                         slack                                  0.344    
 
 
 
@@ -1417,35 +1475,35 @@ Sources:            { CLK }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  CLK_IBUF_BUFG_inst/I
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X2Y98     U_JOHNSON_COUNTER/count_reg_reg[11]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X2Y98     U_JOHNSON_COUNTER/count_reg_reg[12]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[13]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[14]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[15]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[16]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[17]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[18]/C
-Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[19]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[17]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[18]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[19]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y96     U_JOHNSON_COUNTER/count_reg_reg[1]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[20]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y102    U_JOHNSON_COUNTER/count_reg_reg[26]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y102    U_JOHNSON_COUNTER/count_reg_reg[27]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y102    U_JOHNSON_COUNTER/count_reg_reg[28]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X2Y96     U_JOHNSON_COUNTER/count_reg_reg[2]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X2Y96     U_JOHNSON_COUNTER/count_reg_reg[3]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X2Y98     U_JOHNSON_COUNTER/count_reg_reg[11]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X2Y98     U_JOHNSON_COUNTER/count_reg_reg[12]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[13]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[14]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[15]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y99     U_JOHNSON_COUNTER/count_reg_reg[16]/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[17]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[17]/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[18]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X4Y100    U_JOHNSON_COUNTER/count_reg_reg[18]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y67     U_JOHNSON_COUNTER/count_reg_reg[11]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y67     U_JOHNSON_COUNTER/count_reg_reg[12]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y68     U_JOHNSON_COUNTER/count_reg_reg[13]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X6Y68     U_JOHNSON_COUNTER/count_reg_reg[14]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y68     U_JOHNSON_COUNTER/count_reg_reg[15]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X6Y68     U_JOHNSON_COUNTER/count_reg_reg[16]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y68     U_JOHNSON_COUNTER/count_reg_reg[17]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X6Y69     U_JOHNSON_COUNTER/count_reg_reg[18]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X5Y69     U_JOHNSON_COUNTER/count_reg_reg[19]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y67     U_JOHNSON_COUNTER/count_reg_reg[11]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y67     U_JOHNSON_COUNTER/count_reg_reg[12]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[1]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[2]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[3]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[4]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[5]/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[8]/C
+Low Pulse Width   Fast    FDPE/C   n/a            0.500         5.000       4.500      SLICE_X0Y69     U_JOHNSON_COUNTER/result_reg[0]_P/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X1Y69     U_JOHNSON_COUNTER/result_reg[15]_C/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[1]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[2]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[3]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X6Y65     U_JOHNSON_COUNTER/count_reg_reg[4]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[5]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y66     U_JOHNSON_COUNTER/count_reg_reg[6]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y66     U_JOHNSON_COUNTER/count_reg_reg[7]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y65     U_JOHNSON_COUNTER/count_reg_reg[8]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X5Y66     U_JOHNSON_COUNTER/count_reg_reg[9]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X1Y66     U_JOHNSON_COUNTER/result_reg[10]_C/C
 
 
 

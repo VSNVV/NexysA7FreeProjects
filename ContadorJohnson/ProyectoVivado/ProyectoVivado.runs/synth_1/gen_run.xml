@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1716821321">
+<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1716937222">
   <File Type="PA-TCL" Name="test_johnson_counter.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="test_johnson_counter_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="test_johnson_counter_reports.tcl"/>
@@ -47,9 +47,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

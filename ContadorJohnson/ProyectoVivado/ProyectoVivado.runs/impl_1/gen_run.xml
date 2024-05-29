@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1716821801">
+<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1716937222">
   <File Type="PWROPT-DCP" Name="test_johnson_counter_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="test_johnson_counter_power_routed.rpt"/>
   <File Type="PA-TCL" Name="test_johnson_counter.tcl"/>
@@ -101,9 +101,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

@@ -57,7 +57,6 @@ begin
                 end if;
             end if;
         end if;
-        pol_reg <= POL;
         COUNTER_OUT <= result;
     end process JohnsonCounter;
 end rtl;
