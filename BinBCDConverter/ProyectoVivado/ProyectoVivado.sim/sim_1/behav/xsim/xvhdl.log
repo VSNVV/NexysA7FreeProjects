@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BinBCDConverter/bin_bcd_converter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity bin_bcd_converter
+INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BinBCDConverter/bcd_converter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity bcd_converter_tb

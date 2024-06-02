@@ -1,0 +1,5 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 532350 ns  Iteration: 0  Process: /bcd_converter_tb/line__46  File: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BinBCDConverter/bcd_converter_tb.vhd
+$finish called at time : 532350 ns : File "V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BinBCDConverter/bcd_converter_tb.vhd" Line 65

@@ -1,0 +1,17 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: V:/Aplicaciones/Vivado/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto de4d65c8ac1d46a5a71c99a5d8a958db --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot bcd_converter_tb_behav xil_defaultlib.bcd_converter_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.bin_bcd_converter [bin_bcd_converter_default]
+Compiling architecture rtl of entity xil_defaultlib.display_number_controller [display_number_controller_defaul...]
+Compiling architecture sim of entity xil_defaultlib.bcd_converter_tb
+Built simulation snapshot bcd_converter_tb_behav
