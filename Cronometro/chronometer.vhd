@@ -6,7 +6,8 @@ entity chronometer is
   port(RST       : in  std_logic;
       CLK        : in  std_logic;
       PAUSE      : in std_logic; 
-      DATA_OUT   : out std_logic_vector(31 downto 0));
+      DATA_OUT   : out std_logic_vector(31 downto 0);
+      DATA_OUT_OK : out std_logic);
 end chronometer;
 
 architecture rtl of chronometer is
@@ -14,6 +15,7 @@ architecture rtl of chronometer is
 constant CLK_DIV : integer := 1666667; -- Por cada estos 10 nanos (hay unos pocos ns de mas pero es inapreciable)
 signal PROut : std_logic;
 signal TimerOut : std_logic_vector(31 downto 0);
+signal data_out_ok_reg : std_logic;
 
 begin
     Prescaler: process(CLK, RST, PAUSE)
@@ -53,19 +55,19 @@ begin
             if PROut = '1' then
                 if ms_0 = "1001" then
                     ms_0 := "0000";
-                    if ms_1 = "0110" then
+                    if ms_1 = "0101" then
                         ms_1 := "0000";
                         if s_0 = "1001" then
                             s_0 := "0000";
-                            if s_1 = "0110" then
+                            if s_1 = "0101" then
                                 s_1 := "0000";
                                 if m_0 = "1001" then
                                     m_0 := "0000";
-                                    if m_1 = "0110" then
+                                    if m_1 = "0101" then
                                         m_1 := "0000";
                                         if h_0 = "1001" then
                                             h_0 := "0000";
-                                            if h_1 = "0110" then
+                                            if h_1 = "0101" then
                                                 h_1 := "0000";
                                             else
                                                 h_1 := h_1 + 1;
@@ -99,8 +101,10 @@ begin
 
     RegisterTimerOut: process(CLK, TimerOut)
     begin
+        DATA_OUT_OK <= '0';
         if rising_edge(CLK) then
-            DATA_OUT <= TimerOut
+           DATA_OUT <= TimerOut;
+           DATA_OUT_OK <= '1';
         end if;
     end process RegisterTimerOut;
 
