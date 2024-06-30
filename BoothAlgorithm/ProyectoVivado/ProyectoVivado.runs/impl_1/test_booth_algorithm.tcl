@@ -66,7 +66,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   open_checkpoint test_booth_algorithm_routed.dcp
-  set_property webtalk.parent_dir C:/Users/victorsanavia/Documents/RepositoriosGit/NexysA7FreeProjects/BoothAlgorithm/ProyectoVivado/ProyectoVivado.cache/wt [current_project]
+  set_property webtalk.parent_dir V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BoothAlgorithm/ProyectoVivado/ProyectoVivado.cache/wt [current_project]
   catch { write_mem_info -force test_booth_algorithm.mmi }
   write_bitstream -force test_booth_algorithm.bit 
   catch {write_debug_probes -quiet -force test_booth_algorithm}

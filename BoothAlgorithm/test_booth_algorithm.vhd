@@ -7,7 +7,7 @@ entity test_booth_algorithm is
         CLK : in std_logic;
         NUMBER_A : in std_logic_vector(1 downto 0);
         NUMBER_B : in std_logic_vector(1 downto 0);
-        NUMBER_OUT : out std_logic_vector(3 downto 0)
+        NUMBER_OUT : out std_logic_vector(7 downto 0)
     );
 end test_booth_algorithm;
 

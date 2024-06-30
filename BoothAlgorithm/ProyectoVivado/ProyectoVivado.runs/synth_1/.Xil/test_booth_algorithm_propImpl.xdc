@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/victorsanavia/Documents/RepositoriosGit/NexysA7FreeProjects/BoothAlgorithm/test_booth_algorithm.xdc rfile:../../../../test_booth_algorithm.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:V:/Programacion/RepositoriosGit/NexysA7FreeProjects/BoothAlgorithm/test_booth_algorithm.xdc rfile:../../../../test_booth_algorithm.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
@@ -17,3 +17,11 @@ set_property src_info {type:XDC file:1 line:16 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN J13   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[2] }]; #IO_L17N_T2_A25_15 Sch=led[2]
 set_property src_info {type:XDC file:1 line:17 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN N14   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[3] }]; #IO_L8P_T1_D11_14 Sch=led[3]
+set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R18   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[4] }]; #IO_L7P_T1_D09_14 Sch=led[4]
+set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[5] }]; #IO_L18N_T2_A11_D27_14 Sch=led[5]
+set_property src_info {type:XDC file:1 line:20 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[6] }]; #IO_L17P_T2_A14_D30_14 Sch=led[6]
+set_property src_info {type:XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS33 } [get_ports { NUMBER_OUT[7] }]; #IO_L18P_T2_A12_D28_14 Sch=led[7]
