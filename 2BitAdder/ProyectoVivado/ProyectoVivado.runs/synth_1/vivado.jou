@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jun 27 15:51:35 2024
+# Process ID: 236
+# Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitAdder/ProyectoVivado/ProyectoVivado.runs/synth_1
+# Command line: vivado.exe -log test_adder_2bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_adder_2bit.tcl
+# Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitAdder/ProyectoVivado/ProyectoVivado.runs/synth_1/test_adder_2bit.vds
+# Journal file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitAdder/ProyectoVivado/ProyectoVivado.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source test_adder_2bit.tcl -notrace

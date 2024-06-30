@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Jun 29 00:54:48 2024
+# Process ID: 15488
+# Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitMultiplier/ProyectoVivado/ProyectoVivado.runs/impl_1
+# Command line: vivado.exe -log test_multiplier_2bit.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_multiplier_2bit.tcl -notrace
+# Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitMultiplier/ProyectoVivado/ProyectoVivado.runs/impl_1/test_multiplier_2bit.vdi
+# Journal file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/2BitMultiplier/ProyectoVivado/ProyectoVivado.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source test_multiplier_2bit.tcl -notrace
