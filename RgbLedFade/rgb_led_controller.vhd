@@ -23,16 +23,46 @@ signal ActualState : FSM; -- Sennal del estado en el que se encuentra la Maquina
 signal RegRedIn, RegGreenIn, RegBlueIn : std_logic_vector(2 downto 0); -- Sennales de salida del Registro de entrada
 
 begin
-    FinitStateMachine: process(CLK, RST, ActualState)
+    FinitStateMachine: process(CLK, RST, CHANGE_STATE, ActualState)
     begin
         if RST = '1' then
             ActualState <= Idle;
         elsif rising_edge(CLK) then
             case ActualState is
                 when Idle =>
-                    
-
-
+                    if CHANGE_STATE = '1' then
+                        ActualState <= Red;
+                    else
+                        ActualState <= Idle;
+                    end if;
+                when Red =>
+                    if CHANGE_STATE = '1' then
+                        ActualState <= Green;
+                    else
+                        ActualState <= Red;
+                    end if;
+                when Green =>
+                    if CHANGE_STATE = '1' then
+                        ActualState <= Blue;
+                    else
+                        ActualState <= Green;
+                    end if;
+                when Blue =>
+                    if CHANGE_STATE = '1' then
+                        ActualState <= Fade;
+                    else
+                        ActualState <= Blue;
+                    end if;
+                when Fade =>
+                    if CHANGE_STATE = '1' then
+                        ActualState <= Idle;
+                    else
+                        ActualState <= Fade;
+                    end if;
+                when others => ActualState <= Idle;
+            end case;
+        end if;
+    end process FinitStateMachine;e
 
     RegIn: process(CLK, RST, RED_IN)
     begin
