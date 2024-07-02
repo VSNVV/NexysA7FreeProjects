@@ -12,7 +12,6 @@ end pwm_module;
 
 architecture rtl of pwm_module is
 -- Declaracion de Sennales y/o Constantes
--- Probar luminosidad con el Prescaler
 signal prescalerCnt : unsigned(7 downto 0); -- Sennal que determina la cuenta del prescaler
 
 begin

@@ -23,24 +23,10 @@ begin
     end process RegisterNumberBin;
 
     DecoderBinToC2: process(RegisterOut)
-    variable tmp : unsigned(1 downto 0);
-    variable tmp2 : std_logic;
-    variable test : signed(1 downto 0);
+    variable temp : unsigned((RegisterOut'length - 1) downto 0);
     begin
-        tmp := (others => '0');
-        tmp2 := '0';
-        for i in RegisterOut'reverse_range loop
-            if tmp2 = '0' then
-                if RegisterOut(i) = '0' then
-                    tmp2 := '0';
-                else
-                    tmp2 := '1';
-                end if;
-                tmp(i) := RegisterOut(i);
-            else
-                tmp(i) := not RegisterOut(i);
-            end if;
-        end loop;
-        NUMBER_C2 <= std_logic_vector(tmp);
+        temp := unsigned(RegisterOut);
+        temp := (not temp) + 1;
+        NUMBER_C2 <= std_logic_vector(temp);
     end process DecoderBinToC2;
 end rtl;
