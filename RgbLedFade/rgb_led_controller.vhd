@@ -31,9 +31,9 @@ begin
             case ActualState is
                 when Idle =>
                     if CHANGE_STATE = '1' then
-                        ActualState <= Idle;
-                    else
                         ActualState <= Red;
+                    else
+                        ActualState <= Idle;
                     end if;
                 when Red =>
                     if CHANGE_STATE = '1' then
