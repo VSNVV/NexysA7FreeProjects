@@ -15,7 +15,7 @@ end rgb_led_controller;
 
 architecture rtl of rgb_led_controller is
 -- Declaracion de Sennales y/o Constantes
-constant CLKDIV : integer := 150000;
+constant CLKDIV : integer := 300000;
 type FSM is (Idle, Red, Green, Blue, Fade);
 signal ActualState : FSM; -- Sennal del estado en el que se encuentra la Maquina de Estados
 signal PR_FC : std_logic; -- Sennal de fin de cuenta del Prescaler
