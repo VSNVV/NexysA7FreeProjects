@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Tue Jul  2 23:03:48 2024
+| Date         : Thu Jul  4 12:59:03 2024
 | Host         : victorsanavia running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file test_rgb_led_controller_control_sets_placed.rpt
 | Design       : test_rgb_led_controller
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              33 |            9 |
-| No           | No                    | Yes                    |              39 |           17 |
+| No           | No                    | No                     |              33 |           10 |
+| No           | No                    | Yes                    |              39 |           16 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               2 |            2 |
-| Yes          | No                    | Yes                    |              48 |           15 |
+| Yes          | No                    | Yes                    |              48 |           14 |
 | Yes          | Yes                   | No                     |              12 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -51,9 +51,9 @@ Table of Contents
 |  CLK_IBUF_BUFG | U_DEBOUNCER/clear                  |                   |                1 |              1 |
 |  CLK_IBUF_BUFG | U_DEBOUNCER/stble0_out             |                   |                1 |              1 |
 |  CLK_IBUF_BUFG | U_DEBOUNCER/cnt                    | U_DEBOUNCER/clear |                3 |             12 |
-|  CLK_IBUF_BUFG |                                    |                   |                9 |             33 |
-|  CLK_IBUF_BUFG |                                    | RST_IBUF          |               17 |             39 |
-|  CLK_IBUF_BUFG | U_RGB_LED_CONTROLLER/PR_FC_reg_n_0 | RST_IBUF          |               15 |             48 |
+|  CLK_IBUF_BUFG |                                    |                   |               10 |             33 |
+|  CLK_IBUF_BUFG |                                    | RST_IBUF          |               16 |             39 |
+|  CLK_IBUF_BUFG | U_RGB_LED_CONTROLLER/PR_FC_reg_n_0 | RST_IBUF          |               14 |             48 |
 +----------------+------------------------------------+-------------------+------------------+----------------+
 
 

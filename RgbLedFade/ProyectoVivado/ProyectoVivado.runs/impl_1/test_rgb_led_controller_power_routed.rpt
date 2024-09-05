@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Tue Jul  2 23:04:18 2024
+| Date             : Thu Jul  4 12:59:36 2024
 | Host             : victorsanavia running 64-bit major release  (build 9200)
 | Command          : report_power -file test_rgb_led_controller_power_routed.rpt -pb test_rgb_led_controller_power_summary_routed.pb -rpx test_rgb_led_controller_power_routed.rpx
 | Design           : test_rgb_led_controller
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.103        |
+| Total On-Chip Power (W)  | 0.104        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.006        |
+| Dynamic (W)              | 0.007        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -60,9 +60,9 @@ Table of Contents
 |   F7/F8 Muxes  |    <0.001 |        4 |     63400 |           <0.01 |
 |   Others       |     0.000 |        8 |       --- |             --- |
 | Signals        |    <0.001 |      252 |       --- |             --- |
-| I/O            |     0.004 |        9 |       210 |            4.29 |
+| I/O            |     0.005 |        9 |       210 |            4.29 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.103 |          |           |                 |
+| Total          |     0.104 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -141,12 +141,12 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| test_rgb_led_controller |     0.006 |
+| test_rgb_led_controller |     0.007 |
 |   U_DEBOUNCER           |    <0.001 |
 |   U_PWM_BLUE_LED1       |    <0.001 |
 |   U_PWM_GREEN_LED1      |    <0.001 |
 |   U_PWM_RED_LED1        |    <0.001 |
-|   U_RGB_LED_CONTROLLER  |     0.001 |
+|   U_RGB_LED_CONTROLLER  |     0.002 |
 +-------------------------+-----------+
 
 

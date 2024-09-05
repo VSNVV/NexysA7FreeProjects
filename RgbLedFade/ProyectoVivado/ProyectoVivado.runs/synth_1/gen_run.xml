@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1719954160">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1720090660">
   <File Type="PA-TCL" Name="test_rgb_led_controller.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="test_rgb_led_controller_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="test_rgb_led_controller_reports.tcl"/>

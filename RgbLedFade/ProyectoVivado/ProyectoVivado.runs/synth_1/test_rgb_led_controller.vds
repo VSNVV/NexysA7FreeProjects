@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Jul  2 23:02:41 2024
-# Process ID: 21928
+# Start of session at: Thu Jul  4 12:57:42 2024
+# Process ID: 9048
 # Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/ProyectoVivado/ProyectoVivado.runs/synth_1
 # Command line: vivado.exe -log test_rgb_led_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_rgb_led_controller.tcl
 # Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/ProyectoVivado/ProyectoVivado.runs/synth_1/test_rgb_led_controller.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16136 
+INFO: Helper process launched with PID 10880 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 351.895 ; gain = 99.781
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 351.512 ; gain = 99.227
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'test_rgb_led_controller' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/test_rgb_led_controller.vhd:19]
 INFO: [Synth 8-638] synthesizing module 'debouncer' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/debouncer.vhd:15]
@@ -29,7 +29,7 @@ INFO: [Synth 8-638] synthesizing module 'pwm_module' [V:/Programacion/Repositori
 INFO: [Synth 8-256] done synthesizing module 'pwm_module' (3#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/pwm_module.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'test_rgb_led_controller' (4#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/test_rgb_led_controller.vhd:19]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 403.676 ; gain = 151.562
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 403.938 ; gain = 151.652
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -39,7 +39,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 403.676 ; gain = 151.562
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 403.938 ; gain = 151.652
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -55,22 +55,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 756.059 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 755.426 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "stble" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cnt" won't be mapped to RAM because it is too sparse
@@ -97,7 +97,7 @@ WARNING: [Synth 8-6014] Unused sequential element prescalerCnt_reg was removed. 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'ActualState_reg' using encoding 'sequential' in module 'rgb_led_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'U_PWM_RED_LED1' (pwm_module) to 'U_PWM_RED_LED2'
 INFO: [Synth 8-223] decloning instance 'U_PWM_GREEN_LED1' (pwm_module) to 'U_PWM_GREEN_LED2'
@@ -196,7 +196,7 @@ WARNING: [Synth 8-6014] Unused sequential element U_PWM_BLUE_LED1/prescalerCnt_r
 WARNING: [Synth 8-6014] Unused sequential element U_PWM_GREEN_LED1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/pwm_module.vhd:21]
 WARNING: [Synth 8-6014] Unused sequential element U_PWM_BLUE_LED1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/pwm_module.vhd:21]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -208,13 +208,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 756.059 ; gain = 503.945
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 755.426 ; gain = 503.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 761.043 ; gain = 508.930
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 760.320 ; gain = 508.035
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -226,7 +226,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -250,7 +250,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -263,7 +263,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -275,25 +275,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -314,8 +314,8 @@ Report Cell Usage:
 |3     |LUT1   |     2|
 |4     |LUT2   |     7|
 |5     |LUT3   |     4|
-|6     |LUT4   |    73|
-|7     |LUT5   |    46|
+|6     |LUT4   |    74|
+|7     |LUT5   |    45|
 |8     |LUT6   |    39|
 |9     |MUXF7  |     3|
 |10    |MUXF8  |     1|
@@ -338,11 +338,11 @@ Report Instance Areas:
 |6     |  U_RGB_LED_CONTROLLER |rgb_led_controller |   266|
 +------+-----------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 771.484 ; gain = 166.988
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 771.484 ; gain = 519.371
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 770.785 ; gain = 167.012
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 770.785 ; gain = 518.500
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -354,8 +354,8 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 43 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 773.285 ; gain = 534.070
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 771.043 ; gain = 531.320
 INFO: [Common 17-1381] The checkpoint 'V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbLedFade/ProyectoVivado/ProyectoVivado.runs/synth_1/test_rgb_led_controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file test_rgb_led_controller_utilization_synth.rpt -pb test_rgb_led_controller_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 773.285 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  2 23:03:15 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 771.043 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jul  4 12:58:24 2024...

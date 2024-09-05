@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Tue Jul  2 23:03:15 2024
+| Date         : Thu Jul  4 12:58:24 2024
 | Host         : victorsanavia running 64-bit major release  (build 9200)
 | Command      : report_utilization -file test_rgb_led_controller_utilization_synth.rpt -pb test_rgb_led_controller_utilization_synth.pb
 | Design       : test_rgb_led_controller
@@ -147,9 +147,9 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |   79 |        Flop & Latch |
-| LUT4     |   73 |                 LUT |
+| LUT4     |   74 |                 LUT |
 | FDRE     |   47 |        Flop & Latch |
-| LUT5     |   46 |                 LUT |
+| LUT5     |   45 |                 LUT |
 | LUT6     |   39 |                 LUT |
 | CARRY4   |   14 |          CarryLogic |
 | FDPE     |    8 |        Flop & Latch |
