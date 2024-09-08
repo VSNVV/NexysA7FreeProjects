@@ -1,0 +1,82 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Sun Sep  8 20:35:16 2024
+| Host         : victorsanavia running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file test_rgb_controller_control_sets_placed.rpt
+| Design       : test_rgb_controller
+| Device       : xc7a100ti
+------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    15 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              35 |           16 |
+| No           | No                    | Yes                    |               8 |            4 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               9 |            3 |
+| Yes          | No                    | Yes                    |              93 |           29 |
+| Yes          | Yes                   | No                     |              12 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------+--------------------------------+-------------------------+------------------+----------------+
+|                Clock Signal               |          Enable Signal         |     Set/Reset Signal    | Slice Load Count | Bel Load Count |
++-------------------------------------------+--------------------------------+-------------------------+------------------+----------------+
+|  CLK_IBUF_BUFG                            | U_RECEIVER/error_recep_i_1_n_0 |                         |                1 |              1 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/CntM_Cnt[3]_i_1_n_0 | RST_IBUF                |                1 |              4 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/PR_Cnt[4]_i_1_n_0   | RST_IBUF                |                2 |              6 |
+|  U_RGB_CONTROLLER/MuxGreen_reg[7]_i_1_n_0 |                                |                         |                3 |              8 |
+|  U_RGB_CONTROLLER/MuxBlue_reg[7]_i_1_n_0  |                                |                         |                4 |              8 |
+|  U_RGB_CONTROLLER/MuxRed_reg[7]_i_1_n_0   |                                |                         |                5 |              8 |
+|  CLK_IBUF_BUFG                            |                                | RST_IBUF                |                4 |              8 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/dato_rx[7]_i_1_n_0  | RST_IBUF                |                3 |              8 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/E[0]                |                         |                2 |              8 |
+|  CLK_IBUF_BUFG                            |                                |                         |                4 |             11 |
+|  CLK_IBUF_BUFG                            | U_DEBOUNCER_ENTER/cnt          | U_DEBOUNCER_ENTER/clear |                3 |             12 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/RDB_Out[10]_i_1_n_0 | RST_IBUF                |                6 |             15 |
+|  CLK_IBUF_BUFG                            | U_RECEIVER/PR_FC_reg_n_0       | RST_IBUF                |                5 |             15 |
+|  CLK_IBUF_BUFG                            | U_RGB_CONTROLLER/ShifterRx     | U_DEBOUNCER_ENTER/AR[0] |                6 |             21 |
+|  CLK_IBUF_BUFG                            | U_RGB_CONTROLLER/R[7]_i_1_n_0  | RST_IBUF                |                6 |             24 |
++-------------------------------------------+--------------------------------+-------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     1 |
+| 4      |                     1 |
+| 6      |                     1 |
+| 8      |                     6 |
+| 11     |                     1 |
+| 12     |                     1 |
+| 15     |                     2 |
+| 16+    |                     2 |
++--------+-----------------------+
+
+

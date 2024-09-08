@@ -1,0 +1,401 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Sep  8 20:34:12 2024
+# Process ID: 3780
+# Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/synth_1
+# Command line: vivado.exe -log test_rgb_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_rgb_controller.tcl
+# Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/synth_1/test_rgb_controller.vds
+# Journal file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source test_rgb_controller.tcl -notrace
+Command: synth_design -top test_rgb_controller -part xc7a100ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16408 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 350.902 ; gain = 99.086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'test_rgb_controller' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/test_rgb_controller.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'receiver' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/receiver.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'receiver' (1#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/receiver.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'comparator_enter' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/comparator_enter.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'comparator_enter' (2#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/comparator_enter.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/debouncer.vhd:15]
+	Parameter NR_OF_CLKS bound to: 4095 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (3#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/debouncer.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'rgb_controller' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/rgb_controller.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'rgb_controller' (4#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/rgb_controller.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'pwm_module' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'pwm_module' (5#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'test_rgb_controller' (6#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/test_rgb_controller.vhd:20]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 403.363 ; gain = 151.547
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 403.363 ; gain = 151.547
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100ticsg324-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/test_rgb_controller.xdc]
+Finished Parsing XDC File [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/test_rgb_controller.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/test_rgb_controller.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/test_rgb_controller_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/test_rgb_controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 754.840 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'STD_Act_reg' in module 'receiver'
+INFO: [Synth 8-5546] ROM "PR_FC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "DATO_RX_OK" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "PR_Cnt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DATO_RX_OK" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "STD_Act" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "RESULT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "stble" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/debouncer.vhd:27]
+INFO: [Synth 8-5544] ROM "MuxRed" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "R" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+               receiving |                              001 |                              001
+               verifying |                              010 |                              011
+               outputing |                              011 |                              010
+                   error |                              100 |                              100
+                  iSTATE |                              101 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STD_Act_reg' using encoding 'sequential' in module 'receiver'
+WARNING: [Synth 8-327] inferring latch for variable 'MuxRed_reg' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/rgb_controller.vhd:56]
+WARNING: [Synth 8-327] inferring latch for variable 'MuxGreen_reg' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/rgb_controller.vhd:58]
+WARNING: [Synth 8-327] inferring latch for variable 'MuxBlue_reg' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/rgb_controller.vhd:60]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'U_PWM_RED1' (pwm_module) to 'U_PWM_RED2'
+INFO: [Synth 8-223] decloning instance 'U_PWM_GREEN1' (pwm_module) to 'U_PWM_GREEN2'
+INFO: [Synth 8-223] decloning instance 'U_PWM_BLUE1' (pwm_module) to 'U_PWM_BLUE2'
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	  14 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 5     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 42    
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module receiver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	  14 Input     32 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 35    
+	   6 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 4     
+Module comparator_enter 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module debouncer 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module rgb_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module pwm_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "U_COMPARATOR_ENTER/RESULT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "U_DEBOUNCER_ENTER/cnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "U_DEBOUNCER_ENTER/stble" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element U_DEBOUNCER_ENTER/cnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/debouncer.vhd:27]
+WARNING: [Synth 8-6014] Unused sequential element U_PWM_RED1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element U_PWM_GREEN1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element U_PWM_BLUE1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element U_PWM_GREEN1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element U_PWM_BLUE1/prescalerCnt_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/pwm_module.vhd:21]
+WARNING: [Synth 8-3332] Sequential element (U_RGB_CONTROLLER/ShifterRx_reg[23]) is unused and will be removed from module test_rgb_controller.
+WARNING: [Synth 8-3332] Sequential element (U_RGB_CONTROLLER/ShifterRx_reg[22]) is unused and will be removed from module test_rgb_controller.
+WARNING: [Synth 8-3332] Sequential element (U_RGB_CONTROLLER/ShifterRx_reg[15]) is unused and will be removed from module test_rgb_controller.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 754.840 ; gain = 503.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 759.375 ; gain = 507.559
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    13|
+|3     |LUT1   |     2|
+|4     |LUT2   |    34|
+|5     |LUT3   |    16|
+|6     |LUT4   |    38|
+|7     |LUT5   |    15|
+|8     |LUT6   |    25|
+|9     |FDCE   |   101|
+|10    |FDRE   |    32|
+|11    |LD     |    24|
+|12    |IBUF   |     3|
+|13    |OBUF   |     7|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------+-----------------+------+
+|      |Instance             |Module           |Cells |
++------+---------------------+-----------------+------+
+|1     |top                  |                 |   311|
+|2     |  U_COMPARATOR_ENTER |comparator_enter |    10|
+|3     |  U_DEBOUNCER_ENTER  |debouncer        |    25|
+|4     |  U_PWM_BLUE1        |pwm_module       |     1|
+|5     |  U_PWM_GREEN1       |pwm_module_0     |     1|
+|6     |  U_PWM_RED1         |pwm_module_1     |    30|
+|7     |  U_RECEIVER         |receiver         |   111|
+|8     |  U_RGB_CONTROLLER   |rgb_controller   |   122|
++------+---------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 770.613 ; gain = 167.320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 770.613 ; gain = 518.797
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 24 instances were transformed.
+  LD => LDCE: 24 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 770.613 ; gain = 531.539
+INFO: [Common 17-1381] The checkpoint 'V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/synth_1/test_rgb_controller.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file test_rgb_controller_utilization_synth.rpt -pb test_rgb_controller_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 770.613 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  8 20:34:45 2024...

@@ -8,108 +8,101 @@ entity rgb_controller is
         CLK : in std_logic;
         DATA_RX : in std_logic_vector(7 downto 0);
         DATA_RX_OK : in std_logic;
-        RED_OUT : out integer range 0 to 255;
-        GREEN_OUT : out integer range 0 to 255;
-        BLUE_OUT : out integer range 0 to 255
+        ENTER : in std_logic;
+        R : out std_logic_vector(7 downto 0);
+        G : out std_logic_vector(7 downto 0);
+        B : out std_logic_vector(7 downto 0)
     );
 end rgb_controller;
 
 architecture rtl of rgb_controller is
 -- Declaracion de Sennales
-type FSM is (RedIn, GreenIn, BlueIn, Outputing, Idle); -- Estados de la Maquina de Estados
-signal ActualState : FSM; -- Estado actual de la Maquina de Estados
-signal DataRxReg : std_logic_vector(7 downto 0); -- Sennal del Registro de Desplazamiento
-signal CntData : unsigned (1 downto 0); -- Sennal del Contador de Digitos recibidos
-signal ComparatorOut : std_logic; -- Sennal de salida del Comparador
+type FSM is (Red, Green, Blue, Outputing); -- Estados de la Maquina de Estados
+signal ActualState : FSM; -- Sennal que indica el estado actual de la Maquina de Estados
+signal ShifterRx : std_logic_vector(23 downto 0); -- Sennal de salida del Registro de Desplazamiento
+signal DecOut : std_logic_vector(7 downto 0); -- Sennal de salida del Decodificador ASCII
+signal MuxRed, MuxGreen, MuxBlue : std_logic_vector(7 downto 0); -- Sennales de salida del Multiplexor
 
 begin
-
-    RegisterDataRx: process(RST, CLK, DATA_RX, DATA_RX_OK)
+    Shifter24Bits: process(RST, CLK, DATA_RX, DATA_RX_OK, ENTER)
     begin
-        if RST = '1' then
-            DataRxReg <= (others => '0');
+        if (RST = '1') or (ENTER = '1') then
+            ShifterRx <= (others => '0');
         elsif rising_edge(CLK) then
             if DATA_RX_OK = '1' then
-                DataRxReg <= DATA_RX;
-            end if;
-        end if;
-    end process RegisterDataRx;
-
-
-    Counter: process(RST, CLK, DATA_RX_OK)
-    begin
-        if RST = '1' then
-            CntData <= (others => '0'); 
-        elsif rising_edge(CLK) then
-            if DATA_RX_OK = '1' then
-                if CntData = "11" then
-                    CntData <= (others => '0');
-                else
-                    CntData <= CntData + 1;
+                if (DATA_RX >= x"30") and (DATA_RX <= x"39") then
+                    ShifterRx <= ShifterRx(15 downto 0) & DATA_RX;
                 end if;
             end if;
         end if;
-    end process Counter;
-
-    Comparator: process(CntData)
-    begin
-        if CntData = "11" then
-            ComparatorOut <= '1';
-        else
-            ComparatorOut <= '0';
-        end if;
-    end process Comparator;
+    end process Shifter24Bits;
     
-    FiniteStateMachine: process(RST, CLK, DATA_RX_OK, DataRxReg, CntData, ComparatorOut, ActualState)
+    DecoderASCIITo8Bit: process(ShifterRx)
+    variable digit1, digit2, digit3 : integer := 0;
+    variable result : integer := 0;
+    begin
+        digit1 := to_integer(unsigned(ShifterRX(23 downto 16))) - 48;
+        digit2 := to_integer(unsigned(ShifterRX(15 downto 8))) - 48;
+        digit3 := to_integer(unsigned(ShifterRX(7 downto 0))) - 48;
+
+        result := (digit1 * 100) + (digit2 * 10) + (digit3);
+
+        DecOut <= std_logic_vector(to_unsigned(result, 8));
+    end process DecoderASCIITo8Bit;
+
+    Multiplexor: process(ActualState, DecOut)
+    begin
+        if ActualState = Red then
+            MuxRed <= DecOut;
+        elsif ActualState = Green then
+            MuxGreen <= DecOut;
+        elsif ActualState = Blue then
+            MuxBlue <= DecOut;
+        end if;
+    end process Multiplexor;
+
+    FiniteStateMachine: process(RST, CLK, ENTER, ActualState)
     begin
         if RST = '1' then
-            ActualState <= RedIn;
+            ActualState <= Red;
         elsif rising_edge(CLK) then
-            ActualState <= RedIn; -- Por defecto, nuestro estado sera la introducción del numero R
             case ActualState is
-                when RedIn =>
-                    if DATA_RX_OK = '1' then
-                        if ComparatorOut = '0' then
-                            ActualState <= RedIn; -- Quedan digitos por meter
-                        elsif ComparatorOut = '1' then
-                            ActualState <= GreenIn; -- Todos los numeros del Rojo estan metidos
-                        elsif DataRxReg = x"0D" then
-                            ActualState <= GreenIn; -- Se ha introducido un enter, por tanto, enviamos lo que tenemos y pasamos al siguiente
-                        end if;
+                when Red =>
+                    if ENTER = '1' then
+                        ActualState <= Green;
+                    else
+                        ActualState <= Red;
                     end if;
-                when GreenIn =>
-                    if DATA_RX_OK = '1' then
-                        if ComparatorOut = '0' then
-                            ActualState <= GreenIn; -- Quedan digitos por meter
-                        elsif ComparatorOut = '1' then
-                            ActualState <= BlueIn; -- Todos los numeros del Rojo estan metidos
-                        elsif DataRxReg = x"0D" then
-                            ActualState <= BlueIn; -- Se ha introducido un enter, por tanto, enviamos lo que tenemos y pasamos al siguiente
-                        end if;
+                when Green =>
+                    if ENTER = '1' then
+                        ActualState <= Blue;
+                    else
+                        ActualState <= Green;
                     end if;
-                when BlueIn =>
-                    if DATA_RX_OK = '1' then
-                        if ComparatorOut = '0' then
-                            ActualState <= BlueIn; -- Quedan digitos por meter
-                        elsif ComparatorOut = '1' then
-                            ActualState <= Outputing; -- Todos los numeros del Azul estan metidos
-                        elsif DataRxReg = x"0D" then
-                            ActualState <= Outputing; -- Se ha introducido un enter, por tanto, enviamos lo que tenemos y pasamos al siguiente
-                        end if;
+                when Blue =>
+                    if ENTER = '1' then
+                        ActualState <= Outputing;
+                    else
+                        ActualState <= Blue;
                     end if;
-                when Outputing =>
-                    ActualState <= Idle;
-                when Idle =>
-                    ActualState <= Idle;
                 when others =>
-                    ActualState <= RedIn;
+                    ActualState <= Red;
             end case;
         end if;
     end process FiniteStateMachine;
-                    
-                        
 
-
-
-
+    RegisterRGB: process(RST, CLK, ActualState, MuxRed, MuxGreen, MuxBlue)
+    begin
+        if RST = '1' then
+            R <= (others => '0');
+            G <= (others => '0');
+            B <= (others => '0');
+        elsif rising_edge(CLK) then
+            if ActualState = Outputing then
+                R <= MuxRed;
+                G <= MuxGreen;
+                B <= MuxBlue;
+            end if;
+        end if;
+    end process RegisterRGB;
 end rtl;
