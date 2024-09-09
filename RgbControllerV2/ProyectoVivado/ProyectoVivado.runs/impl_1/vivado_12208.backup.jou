@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Sep  8 19:49:28 2024
-# Process ID: 14256
+# Start of session at: Mon Sep  9 02:50:30 2024
+# Process ID: 12208
 # Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/impl_1
 # Command line: vivado.exe -log test_rgb_controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_rgb_controller.tcl -notrace
 # Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/RgbControllerV2/ProyectoVivado/ProyectoVivado.runs/impl_1/test_rgb_controller.vdi

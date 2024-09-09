@@ -51,8 +51,7 @@ begin
         end if;
     
         result := (digit1 * 100) + (digit2 * 10) + (digit3);
-    
-        -- Asegura que 'result' sea un número válido entre 0 y 255
+
         ascii_decoder <= std_logic_vector(to_unsigned(result, 8));
     end process AsciiDecoder;
 
