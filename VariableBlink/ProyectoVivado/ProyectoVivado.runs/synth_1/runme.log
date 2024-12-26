@@ -1,0 +1,318 @@
+
+*** Running vivado
+    with args -log test_variable_blink.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_variable_blink.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source test_variable_blink.tcl -notrace
+Command: synth_design -top test_variable_blink -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5888 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 350.895 ; gain = 99.215
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'test_variable_blink' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/test_variable_blink.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'variable_blink' [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/variable_blink.vhd:13]
+WARNING: [Synth 8-614] signal 'RST' is read in the process but is not in the sensitivity list [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/variable_blink.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'variable_blink' (1#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/variable_blink.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'test_variable_blink' (2#1) [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/test_variable_blink.vhd:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 402.855 ; gain = 151.176
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 402.855 ; gain = 151.176
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/test_variable_blink.xdc]
+Finished Parsing XDC File [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/test_variable_blink.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/test_variable_blink.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/test_variable_blink_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/test_variable_blink_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 753.168 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'actual_state_reg' in module 'variable_blink'
+INFO: [Synth 8-5544] ROM "blink_rate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "reversed" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "actual_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "actual_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "actual_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "actual_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element timer_prescaler_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/variable_blink.vhd:91]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  blink1 |                              000 |                              000
+                  blink2 |                              001 |                              001
+                  blink3 |                              010 |                              010
+                  blink4 |                              011 |                              011
+                  blink5 |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'actual_state_reg' using encoding 'sequential' in module 'variable_blink'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
++---Registers : 
+	               27 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   5 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 2     
+	  14 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module variable_blink 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
++---Registers : 
+	               27 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   5 Input     27 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 2     
+	  14 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element U_VARIABLE_BLINK/timer_prescaler_reg was removed.  [V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/variable_blink.vhd:91]
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[0]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[1]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[2]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[3]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[4]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[5]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[6]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[7]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[19]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[8]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[16]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[9]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[17]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[15]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[23]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[16]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[20]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[17]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[25]'
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[18]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_VARIABLE_BLINK/blink_rate_reg[19] )
+INFO: [Synth 8-3886] merging instance 'U_VARIABLE_BLINK/blink_rate_reg[20]' (FDE) to 'U_VARIABLE_BLINK/blink_rate_reg[24]'
+WARNING: [Synth 8-3332] Sequential element (U_VARIABLE_BLINK/blink_rate_reg[19]) is unused and will be removed from module test_variable_blink.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 753.168 ; gain = 501.488
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    21|
+|3     |LUT1   |     5|
+|4     |LUT2   |    55|
+|5     |LUT3   |    34|
+|6     |LUT4   |    20|
+|7     |LUT5   |     2|
+|8     |FDCE   |    63|
+|9     |FDRE   |    12|
+|10    |IBUF   |     2|
+|11    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------+---------------+------+
+|      |Instance           |Module         |Cells |
++------+-------------------+---------------+------+
+|1     |top                |               |   216|
+|2     |  U_VARIABLE_BLINK |variable_blink |   212|
++------+-------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 759.734 ; gain = 157.742
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 759.734 ; gain = 508.055
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 761.844 ; gain = 522.488
+INFO: [Common 17-1381] The checkpoint 'V:/Programacion/RepositoriosGit/NexysA7FreeProjects/VariableBlink/ProyectoVivado/ProyectoVivado.runs/synth_1/test_variable_blink.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file test_variable_blink_utilization_synth.rpt -pb test_variable_blink_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 761.844 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 21:34:51 2024...

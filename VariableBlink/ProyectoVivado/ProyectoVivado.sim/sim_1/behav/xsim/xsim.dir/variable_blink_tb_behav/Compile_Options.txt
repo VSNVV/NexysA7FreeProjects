@@ -1,0 +1,1 @@
+-wto "e446525c7625457b935ad970e5941311" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "variable_blink_tb_behav" "xil_defaultlib.variable_blink_tb" -log "elaborate.log" 
