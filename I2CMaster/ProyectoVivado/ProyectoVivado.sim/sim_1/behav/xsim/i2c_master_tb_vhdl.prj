@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../i2c_master.vhd" \
+"../../../../../i2c_master_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../clkgen10kHz.vhd" \
+"../../../../../clkgen_tb.vhd" \
+
+# Do not sort compile order
+nosort

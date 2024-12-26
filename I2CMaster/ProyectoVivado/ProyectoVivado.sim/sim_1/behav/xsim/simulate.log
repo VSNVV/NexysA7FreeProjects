@@ -1,0 +1,5 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 6720 ns  Iteration: 0  Process: /i2c_master_tb/stimulus  File: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/I2CMaster/i2c_master_tb.vhd
+$finish called at time : 6720 ns : File "V:/Programacion/RepositoriosGit/NexysA7FreeProjects/I2CMaster/i2c_master_tb.vhd" Line 83

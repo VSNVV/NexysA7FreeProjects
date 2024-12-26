@@ -1,0 +1,70 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Thu Dec 26 12:23:00 2024
+| Host         : victorsanavia running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file test_i2c_master_control_sets_placed.rpt
+| Design       : test_i2c_master
+| Device       : xc7a100t
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     7 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              11 |            6 |
+| No           | No                    | Yes                    |              34 |           10 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               8 |            2 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------------+-------------------------+------------------+------------------+----------------+
+|        Clock Signal        |      Enable Signal      | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------------------+-------------------------+------------------+------------------+----------------+
+|  U_I2C_MASTER/SCL_reg/G0   |                         |                  |                1 |              1 |
+|  U_I2C_MASTER/g0_b0_n_0    |                         |                  |                1 |              1 |
+|  U_I2C_MASTER/g0_b0__1_n_0 |                         |                  |                1 |              1 |
+|  U_CLKGEN10KHZ/CLK         | U_I2C_MASTER/temp_data0 | RST_IBUF         |                2 |              8 |
+|  U_I2C_MASTER/DATA0        |                         |                  |                3 |              8 |
+|  CLK_IBUF_BUFG             |                         | RST_IBUF         |                3 |             15 |
+|  U_CLKGEN10KHZ/CLK         |                         | RST_IBUF         |                7 |             19 |
++----------------------------+-------------------------+------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     3 |
+| 8      |                     2 |
+| 15     |                     1 |
+| 16+    |                     1 |
++--------+-----------------------+
+
+
