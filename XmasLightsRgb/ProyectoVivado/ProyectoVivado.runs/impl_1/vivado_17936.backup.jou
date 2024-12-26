@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Dec 20 20:46:17 2024
+# Process ID: 17936
+# Current directory: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/XmasLightsRgb/ProyectoVivado/ProyectoVivado.runs/impl_1
+# Command line: vivado.exe -log test_xmas_lights.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_xmas_lights.tcl -notrace
+# Log file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/XmasLightsRgb/ProyectoVivado/ProyectoVivado.runs/impl_1/test_xmas_lights.vdi
+# Journal file: V:/Programacion/RepositoriosGit/NexysA7FreeProjects/XmasLightsRgb/ProyectoVivado/ProyectoVivado.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source test_xmas_lights.tcl -notrace
